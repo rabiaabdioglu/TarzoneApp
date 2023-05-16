@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5C62882F2A0BF69900111374 /* label.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5C62882D2A0BF69900111374 /* label.txt */; };
+		5C6288302A0BF69900111374 /* ClothPrediction.pth in Resources */ = {isa = PBXBuildFile; fileRef = 5C62882E2A0BF69900111374 /* ClothPrediction.pth */; };
+		5C7888B62A0D421B00679C66 /* FollowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C7888B52A0D421B00679C66 /* FollowView.swift */; };
+		5C7888B82A0D580C00679C66 /* TabItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C7888B72A0D580B00679C66 /* TabItem.swift */; };
+		5C7888BA2A0D59FC00679C66 /* TabContainerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C7888B92A0D59FC00679C66 /* TabContainerViewModel.swift */; };
+		5C7888BC2A0DC02000679C66 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C7888BB2A0DC02000679C66 /* SearchBar.swift */; };
+		5C7888BE2A0DC10900679C66 /* PostGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C7888BD2A0DC10900679C66 /* PostGridView.swift */; };
 		5CDA173D29FFFFFA00BC0139 /* TarzoneAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDA173C29FFFFFA00BC0139 /* TarzoneAppApp.swift */; };
 		5CDA173F29FFFFFA00BC0139 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDA173E29FFFFFA00BC0139 /* ContentView.swift */; };
 		5CDA174129FFFFFC00BC0139 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5CDA174029FFFFFC00BC0139 /* Assets.xcassets */; };
@@ -16,6 +23,29 @@
 		5CDA175329FFFFFC00BC0139 /* TarzoneAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDA175229FFFFFC00BC0139 /* TarzoneAppTests.swift */; };
 		5CDA175D29FFFFFC00BC0139 /* TarzoneAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDA175C29FFFFFC00BC0139 /* TarzoneAppUITests.swift */; };
 		5CDA175F29FFFFFC00BC0139 /* TarzoneAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDA175E29FFFFFC00BC0139 /* TarzoneAppUITestsLaunchTests.swift */; };
+		5CDA17912A00019700BC0139 /* CombinePost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDA17792A00019700BC0139 /* CombinePost.swift */; };
+		5CDA17952A00019700BC0139 /* UserProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDA177F2A00019700BC0139 /* UserProfileView.swift */; };
+		5CDA17972A00019700BC0139 /* NavBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDA17812A00019700BC0139 /* NavBarView.swift */; };
+		5CDA17982A00019700BC0139 /* CombineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDA17822A00019700BC0139 /* CombineView.swift */; };
+		5CDA17992A00019700BC0139 /* TabContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDA17842A00019700BC0139 /* TabContainerView.swift */; };
+		5CDA179A2A00019700BC0139 /* SavedContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDA17852A00019700BC0139 /* SavedContainerView.swift */; };
+		5CDA179B2A00019700BC0139 /* FollowerListContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDA17862A00019700BC0139 /* FollowerListContainerView.swift */; };
+		5CDA179C2A00019700BC0139 /* SavedClothContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDA17872A00019700BC0139 /* SavedClothContainerView.swift */; };
+		5CDA179D2A00019700BC0139 /* RegisterContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDA17882A00019700BC0139 /* RegisterContainerView.swift */; };
+		5CDA179E2A00019700BC0139 /* LoginContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDA17892A00019700BC0139 /* LoginContainerView.swift */; };
+		5CDA179F2A00019700BC0139 /* CreateCombineContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDA178A2A00019700BC0139 /* CreateCombineContainerView.swift */; };
+		5CDA17A02A00019700BC0139 /* TimeLineContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDA178B2A00019700BC0139 /* TimeLineContainerView.swift */; };
+		5CDA17A12A00019700BC0139 /* ProfileContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDA178C2A00019700BC0139 /* ProfileContainerView.swift */; };
+		5CDA17A22A00019700BC0139 /* ScanCloth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDA178D2A00019700BC0139 /* ScanCloth.swift */; };
+		5CDA17A32A00019700BC0139 /* ChoosenPostContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDA178E2A00019700BC0139 /* ChoosenPostContainerView.swift */; };
+		5CDA17A52A0073F400BC0139 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDA17A42A0073F400BC0139 /* UserProfile.swift */; };
+		5CDA17A72A00750400BC0139 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDA17A62A00750400BC0139 /* User.swift */; };
+		5CDA17A92A00773F00BC0139 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDA17A82A00773F00BC0139 /* Category.swift */; };
+		5CDA17AB2A00778D00BC0139 /* SubCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDA17AA2A00778D00BC0139 /* SubCategory.swift */; };
+		5CDA17AD2A0077F100BC0139 /* Cloth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDA17AC2A0077F100BC0139 /* Cloth.swift */; };
+		5CDA17AF2A00780D00BC0139 /* Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDA17AE2A00780D00BC0139 /* Combine.swift */; };
+		5CDA17B32A007CF700BC0139 /* MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDA17B22A007CF700BC0139 /* MockData.swift */; };
+		5CDA17B52A009DF800BC0139 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDA17B42A009DF800BC0139 /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +66,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5C62882D2A0BF69900111374 /* label.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = label.txt; sourceTree = "<group>"; };
+		5C62882E2A0BF69900111374 /* ClothPrediction.pth */ = {isa = PBXFileReference; lastKnownFileType = file; path = ClothPrediction.pth; sourceTree = "<group>"; };
+		5C7888B52A0D421B00679C66 /* FollowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowView.swift; sourceTree = "<group>"; };
+		5C7888B72A0D580B00679C66 /* TabItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabItem.swift; sourceTree = "<group>"; };
+		5C7888B92A0D59FC00679C66 /* TabContainerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabContainerViewModel.swift; sourceTree = "<group>"; };
+		5C7888BB2A0DC02000679C66 /* SearchBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
+		5C7888BD2A0DC10900679C66 /* PostGridView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostGridView.swift; sourceTree = "<group>"; };
 		5CDA173929FFFFFA00BC0139 /* TarzoneApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TarzoneApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CDA173C29FFFFFA00BC0139 /* TarzoneAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TarzoneAppApp.swift; sourceTree = "<group>"; };
 		5CDA173E29FFFFFA00BC0139 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -48,6 +85,30 @@
 		5CDA175829FFFFFC00BC0139 /* TarzoneAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TarzoneAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CDA175C29FFFFFC00BC0139 /* TarzoneAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TarzoneAppUITests.swift; sourceTree = "<group>"; };
 		5CDA175E29FFFFFC00BC0139 /* TarzoneAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TarzoneAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		5CDA176B2A00001900BC0139 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		5CDA17792A00019700BC0139 /* CombinePost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CombinePost.swift; sourceTree = "<group>"; };
+		5CDA177F2A00019700BC0139 /* UserProfileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileView.swift; sourceTree = "<group>"; };
+		5CDA17812A00019700BC0139 /* NavBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavBarView.swift; sourceTree = "<group>"; };
+		5CDA17822A00019700BC0139 /* CombineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CombineView.swift; sourceTree = "<group>"; };
+		5CDA17842A00019700BC0139 /* TabContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabContainerView.swift; sourceTree = "<group>"; };
+		5CDA17852A00019700BC0139 /* SavedContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavedContainerView.swift; sourceTree = "<group>"; };
+		5CDA17862A00019700BC0139 /* FollowerListContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowerListContainerView.swift; sourceTree = "<group>"; };
+		5CDA17872A00019700BC0139 /* SavedClothContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavedClothContainerView.swift; sourceTree = "<group>"; };
+		5CDA17882A00019700BC0139 /* RegisterContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterContainerView.swift; sourceTree = "<group>"; };
+		5CDA17892A00019700BC0139 /* LoginContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginContainerView.swift; sourceTree = "<group>"; };
+		5CDA178A2A00019700BC0139 /* CreateCombineContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateCombineContainerView.swift; sourceTree = "<group>"; };
+		5CDA178B2A00019700BC0139 /* TimeLineContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeLineContainerView.swift; sourceTree = "<group>"; };
+		5CDA178C2A00019700BC0139 /* ProfileContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileContainerView.swift; sourceTree = "<group>"; };
+		5CDA178D2A00019700BC0139 /* ScanCloth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanCloth.swift; sourceTree = "<group>"; };
+		5CDA178E2A00019700BC0139 /* ChoosenPostContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChoosenPostContainerView.swift; sourceTree = "<group>"; };
+		5CDA17A42A0073F400BC0139 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
+		5CDA17A62A00750400BC0139 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		5CDA17A82A00773F00BC0139 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		5CDA17AA2A00778D00BC0139 /* SubCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubCategory.swift; sourceTree = "<group>"; };
+		5CDA17AC2A0077F100BC0139 /* Cloth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cloth.swift; sourceTree = "<group>"; };
+		5CDA17AE2A00780D00BC0139 /* Combine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Combine.swift; sourceTree = "<group>"; };
+		5CDA17B22A007CF700BC0139 /* MockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockData.swift; sourceTree = "<group>"; };
+		5CDA17B42A009DF800BC0139 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,12 +159,20 @@
 		5CDA173B29FFFFFA00BC0139 /* TarzoneApp */ = {
 			isa = PBXGroup;
 			children = (
+				5CDA178F2A00019700BC0139 /* Data */,
+				5CDA17902A00019700BC0139 /* MLModel */,
+				5CDA17782A00019700BC0139 /* Model */,
+				5CDA177D2A00019700BC0139 /* ViewModel */,
+				5CDA17832A00019700BC0139 /* ViewContainers */,
+				5CDA177E2A00019700BC0139 /* View */,
+				5CDA176B2A00001900BC0139 /* Info.plist */,
 				5CDA173C29FFFFFA00BC0139 /* TarzoneAppApp.swift */,
 				5CDA173E29FFFFFA00BC0139 /* ContentView.swift */,
 				5CDA174029FFFFFC00BC0139 /* Assets.xcassets */,
 				5CDA174529FFFFFC00BC0139 /* Persistence.swift */,
 				5CDA174729FFFFFC00BC0139 /* TarzoneApp.xcdatamodeld */,
 				5CDA174229FFFFFC00BC0139 /* Preview Content */,
+				5CDA17B42A009DF800BC0139 /* Extensions.swift */,
 			);
 			path = TarzoneApp;
 			sourceTree = "<group>";
@@ -131,6 +200,77 @@
 				5CDA175E29FFFFFC00BC0139 /* TarzoneAppUITestsLaunchTests.swift */,
 			);
 			path = TarzoneAppUITests;
+			sourceTree = "<group>";
+		};
+		5CDA17782A00019700BC0139 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5CDA17A62A00750400BC0139 /* User.swift */,
+				5CDA17A42A0073F400BC0139 /* UserProfile.swift */,
+				5CDA17AE2A00780D00BC0139 /* Combine.swift */,
+				5CDA17792A00019700BC0139 /* CombinePost.swift */,
+				5CDA17AC2A0077F100BC0139 /* Cloth.swift */,
+				5CDA17A82A00773F00BC0139 /* Category.swift */,
+				5CDA17AA2A00778D00BC0139 /* SubCategory.swift */,
+				5C7888B72A0D580B00679C66 /* TabItem.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5CDA177D2A00019700BC0139 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				5C7888B92A0D59FC00679C66 /* TabContainerViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		5CDA177E2A00019700BC0139 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5C7888BB2A0DC02000679C66 /* SearchBar.swift */,
+				5CDA177F2A00019700BC0139 /* UserProfileView.swift */,
+				5C7888BD2A0DC10900679C66 /* PostGridView.swift */,
+				5CDA17812A00019700BC0139 /* NavBarView.swift */,
+				5CDA17822A00019700BC0139 /* CombineView.swift */,
+				5C7888B52A0D421B00679C66 /* FollowView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5CDA17832A00019700BC0139 /* ViewContainers */ = {
+			isa = PBXGroup;
+			children = (
+				5CDA17842A00019700BC0139 /* TabContainerView.swift */,
+				5CDA17852A00019700BC0139 /* SavedContainerView.swift */,
+				5CDA17862A00019700BC0139 /* FollowerListContainerView.swift */,
+				5CDA17872A00019700BC0139 /* SavedClothContainerView.swift */,
+				5CDA17882A00019700BC0139 /* RegisterContainerView.swift */,
+				5CDA17892A00019700BC0139 /* LoginContainerView.swift */,
+				5CDA178A2A00019700BC0139 /* CreateCombineContainerView.swift */,
+				5CDA178B2A00019700BC0139 /* TimeLineContainerView.swift */,
+				5CDA178C2A00019700BC0139 /* ProfileContainerView.swift */,
+				5CDA178D2A00019700BC0139 /* ScanCloth.swift */,
+				5CDA178E2A00019700BC0139 /* ChoosenPostContainerView.swift */,
+			);
+			path = ViewContainers;
+			sourceTree = "<group>";
+		};
+		5CDA178F2A00019700BC0139 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				5CDA17B22A007CF700BC0139 /* MockData.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		5CDA17902A00019700BC0139 /* MLModel */ = {
+			isa = PBXGroup;
+			children = (
+				5C62882E2A0BF69900111374 /* ClothPrediction.pth */,
+				5C62882D2A0BF69900111374 /* label.txt */,
+			);
+			path = MLModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -237,8 +377,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C6288302A0BF69900111374 /* ClothPrediction.pth in Resources */,
 				5CDA174429FFFFFC00BC0139 /* Preview Assets.xcassets in Resources */,
 				5CDA174129FFFFFC00BC0139 /* Assets.xcassets in Resources */,
+				5C62882F2A0BF69900111374 /* label.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,10 +405,38 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5CDA17AB2A00778D00BC0139 /* SubCategory.swift in Sources */,
+				5CDA17A32A00019700BC0139 /* ChoosenPostContainerView.swift in Sources */,
+				5CDA179F2A00019700BC0139 /* CreateCombineContainerView.swift in Sources */,
+				5C7888B82A0D580C00679C66 /* TabItem.swift in Sources */,
+				5CDA17952A00019700BC0139 /* UserProfileView.swift in Sources */,
+				5CDA179B2A00019700BC0139 /* FollowerListContainerView.swift in Sources */,
+				5C7888BC2A0DC02000679C66 /* SearchBar.swift in Sources */,
+				5CDA17A22A00019700BC0139 /* ScanCloth.swift in Sources */,
+				5CDA179E2A00019700BC0139 /* LoginContainerView.swift in Sources */,
 				5CDA174629FFFFFC00BC0139 /* Persistence.swift in Sources */,
+				5CDA17B52A009DF800BC0139 /* Extensions.swift in Sources */,
+				5CDA17912A00019700BC0139 /* CombinePost.swift in Sources */,
+				5CDA17972A00019700BC0139 /* NavBarView.swift in Sources */,
+				5C7888BA2A0D59FC00679C66 /* TabContainerViewModel.swift in Sources */,
+				5CDA17A52A0073F400BC0139 /* UserProfile.swift in Sources */,
 				5CDA173F29FFFFFA00BC0139 /* ContentView.swift in Sources */,
+				5CDA179A2A00019700BC0139 /* SavedContainerView.swift in Sources */,
+				5CDA17982A00019700BC0139 /* CombineView.swift in Sources */,
+				5CDA17992A00019700BC0139 /* TabContainerView.swift in Sources */,
+				5CDA17A92A00773F00BC0139 /* Category.swift in Sources */,
+				5C7888BE2A0DC10900679C66 /* PostGridView.swift in Sources */,
+				5C7888B62A0D421B00679C66 /* FollowView.swift in Sources */,
+				5CDA179D2A00019700BC0139 /* RegisterContainerView.swift in Sources */,
 				5CDA173D29FFFFFA00BC0139 /* TarzoneAppApp.swift in Sources */,
 				5CDA174929FFFFFC00BC0139 /* TarzoneApp.xcdatamodeld in Sources */,
+				5CDA17A12A00019700BC0139 /* ProfileContainerView.swift in Sources */,
+				5CDA17AF2A00780D00BC0139 /* Combine.swift in Sources */,
+				5CDA17B32A007CF700BC0139 /* MockData.swift in Sources */,
+				5CDA17A72A00750400BC0139 /* User.swift in Sources */,
+				5CDA179C2A00019700BC0139 /* SavedClothContainerView.swift in Sources */,
+				5CDA17AD2A0077F100BC0139 /* Cloth.swift in Sources */,
+				5CDA17A02A00019700BC0139 /* TimeLineContainerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -428,9 +598,9 @@
 				DEVELOPMENT_TEAM = 9RVC283PBZ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TarzoneApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -457,9 +627,9 @@
 				DEVELOPMENT_TEAM = 9RVC283PBZ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TarzoneApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
