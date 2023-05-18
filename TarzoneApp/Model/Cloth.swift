@@ -17,5 +17,6 @@ struct Cloth: Identifiable {
     var clothImage : String
     var size : String
     var createdAt : Date
+    var userId : Int
 }
 

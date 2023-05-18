@@ -11,12 +11,14 @@ import Foundation
 struct Combine: Identifiable {
     
     let id = UUID()
-    let topId : Cloth
-    let bottomId : Cloth
-    let dressId : Cloth
-    let shoeId : Cloth
-    let bagId : Cloth
-    let outwearId : Cloth
-    let accessoryId : Cloth
+    var top : Cloth
+    var bottom : Cloth
+    var dress : Cloth
+    var shoe : Cloth
+    var bag : Cloth
+    var outwear : Cloth
+    var accessory : Cloth
+    var userId : Int
+
 
 }

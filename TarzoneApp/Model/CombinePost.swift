@@ -12,11 +12,13 @@ struct CombinePost: Identifiable {
     
     let id = UUID()
     let combine : Combine
-    let likes : String
-    let isLiked : Bool = false
+    var likes : String
+    var isLiked : Bool = false
     var description : String
     var season : Seasons
     var hashtag :  [String]
+    var userId : Int
+    
 }
 enum Seasons {
     case Spring_Summer
@@ -25,3 +27,17 @@ enum Seasons {
     case Pre_Fall
 }
 
+func seasonToString(_ season: Seasons) -> String {
+    switch season {
+    case .Spring_Summer:
+        return "Spring/Summer"
+    case .Fall_Winter:
+        return "Fall/Winter"
+    case .Resort:
+        return "Resort"
+    case .Pre_Fall:
+        return "Pre-Fall"
+    }
+    
+    
+}

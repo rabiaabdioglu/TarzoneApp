@@ -17,7 +17,8 @@ struct User: Identifiable {
     var privacy : Bool = true
     var hasFollowed : Bool = false
     var isMe : Bool = false
-
+    var followers : Int32
+    var following : Int32
     
     
     
