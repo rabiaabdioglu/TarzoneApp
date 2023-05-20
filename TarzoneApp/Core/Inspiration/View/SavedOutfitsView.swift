@@ -7,13 +7,13 @@
 
 import SwiftUI
 
-struct SavedCombinesView: View {
+struct SavedOutfitView: View {
     var body: some View {
         
         NavigationView{
         VStack() {
             ScrollView {
-                PostGridView(combine: MockData().posts)
+                PostGridView(outfit: MockData().posts)
             }
         }
         .navigationTitle("Inspirations")
@@ -25,8 +25,8 @@ struct SavedCombinesView: View {
     }
 }
 
-struct SavedCombinesView_Previews: PreviewProvider {
+struct SavedOutfitsView_Previews: PreviewProvider {
     static var previews: some View {
-        SavedCombinesView()
+        SavedOutfitView()
     }
 }

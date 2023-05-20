@@ -17,7 +17,7 @@ struct  TabItem : Hashable{
         case timeline
         case inspiration
         case scanCloth
-        case combineLab
+        case outfitLab
         case profile
     }
 }

@@ -1,5 +1,5 @@
 //
-//  CombineView.swift
+//  OutfitView.swift
 //  Tarzone
 //
 //  Created by Rabia Abdioğlu on 8.04.2023.
@@ -7,9 +7,9 @@
 
 import SwiftUI
 
-struct CombineView: View {
+struct OutfitView: View {
     
-    var combine : Combine
+    var outfit : Outfit
     
     let width = UIScreen.screenWidth * 0.2
     
@@ -24,23 +24,23 @@ struct CombineView: View {
                 
                 VStack {
                     
-                    Image(combine.outwear.clothImage)
+                    Image(outfit.outwear.clothImage)
                         .resizable()
                         .frame(width: UIScreen.screenWidth * 0.2, height:UIScreen.screenHeight * 0.30)
                         .scaleEffect(0.8) // İçeriği küçültmek için scaleEffect kullanın
                     
                 }
                 
-                if combine.dress.clothImage == ""
+                if outfit.dress.clothImage == ""
                 {
                     VStack {
                         
-                        Image(combine.top.clothImage)
+                        Image(outfit.top.clothImage)
                             .resizable()
                             .frame(width: UIScreen.screenWidth * 0.2, height:UIScreen.screenHeight * 0.15)
                             .scaleEffect(0.9) // İçeriği küçültmek için scaleEffect kullanın
                         
-                        Image(combine.bottom.clothImage)
+                        Image(outfit.bottom.clothImage)
                             .resizable()
                             .frame(width: UIScreen.screenWidth * 0.2, height:UIScreen.screenHeight * 0.15)
                             .scaleEffect(0.9) // İçeriği küçültmek için scaleEffect kullanın
@@ -51,7 +51,7 @@ struct CombineView: View {
                 else {
                     VStack {
                         
-                        Image(combine.dress.clothImage)
+                        Image(outfit.dress.clothImage)
                             .resizable()
                             .frame(width: UIScreen.screenWidth * 0.2, height:UIScreen.screenHeight * 0.30)
                             .scaleEffect(0.8) // İçeriği küçültmek için scaleEffect kullanın
@@ -62,18 +62,18 @@ struct CombineView: View {
                 
                 VStack {
                     
-                    Image(combine.accessory.clothImage)
+                    Image(outfit.accessory.clothImage)
                         .resizable()
                         .frame(width: UIScreen.screenWidth * 0.2, height:UIScreen.screenHeight * 0.10)
                         .scaleEffect(0.8) // İçeriği küçültmek için scaleEffect kullanın
                     
                     
-                    Image(combine.bag.clothImage)
+                    Image(outfit.bag.clothImage)
                         .resizable()
                         .frame(width: UIScreen.screenWidth * 0.2, height:UIScreen.screenHeight * 0.10)
                         .scaleEffect(0.8) // İçeriği küçültmek için scaleEffect kullanın
                     
-                    Image(combine.shoe.clothImage)
+                    Image(outfit.shoe.clothImage)
                         .resizable()
                         .frame(width: UIScreen.screenWidth * 0.2, height:UIScreen.screenHeight * 0.10)
                         .scaleEffect(0.8) // İçeriği küçültmek için scaleEffect kullanın
@@ -91,8 +91,8 @@ struct CombineView: View {
     }
 }
 
-struct CombineView_Previews: PreviewProvider {
+struct OutfitView_Previews: PreviewProvider {
     static var previews: some View {
-        CombineView(combine: MockData().combines[0] )
+        OutfitView(outfit: MockData().outfits[0] )
     }
 }

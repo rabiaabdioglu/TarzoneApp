@@ -8,10 +8,10 @@
 import Foundation
 
 
-struct CombinePost: Identifiable {
+struct OutfitPost: Identifiable {
     
     let id = UUID()
-    let combine : Combine
+    let outfit : Outfit
     var likes : String
     var isLiked : Bool = false
     var description : String

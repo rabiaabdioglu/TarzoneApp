@@ -9,6 +9,6 @@ import Foundation
 struct Inspiration: Hashable {
     
     var userId : Int
-    var savedCombinesId : [Int]
+    var savedOutfitId : [Int]
     
 }

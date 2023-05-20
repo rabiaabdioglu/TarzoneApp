@@ -8,8 +8,7 @@
 import Foundation
 
 
-struct Category : Identifiable {
+struct Category  {
     
-    let id = UUID()
     let catName : String
 }

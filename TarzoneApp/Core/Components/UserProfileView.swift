@@ -17,7 +17,7 @@ struct UserProfileView: View {
     var body: some View {
         
         Button(action: {
-            if user.isMe {
+            if user.id == "0" {
             //tabbar geçişi için
                 
             } else {
@@ -25,7 +25,7 @@ struct UserProfileView: View {
             }
         }) {
             HStack {
-                Image(user.userImage)
+                Image(user.userImage!)
                     .resizable()
                     .cornerRadius(100)
                     .frame(width: UIScreen.screenWidth * 0.13, height: UIScreen.screenWidth * 0.13, alignment: .center)
@@ -33,13 +33,13 @@ struct UserProfileView: View {
                     .padding(.leading, 5)
                 
                 VStack(alignment: .leading) {
-                    Text(user.name)
-                        .font(Font.custom("HelveticaNeue", size: 13))
+                    Text(user.name!)
+                        .font(Font.custom("HelveticaNeue", size: UIScreen.screenWidth * 0.03))
                         .padding(0.1)
                         .foregroundColor(.black)
 
                     Text(user.userName)
-                        .font(Font.custom("HelveticaNeue-Light", size: 11))
+                        .font(Font.custom("HelveticaNeue-Light", size: UIScreen.screenWidth * 0.025))
                         .padding(0.1)
                         .foregroundColor(.black)
 

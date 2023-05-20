@@ -6,8 +6,8 @@
 //
 
 import SwiftUI
-struct CreateCombineView: View {
-    @State private var newCombine: Combine?
+struct CreateOutfitView: View {
+    @State private var newOutfit: Outfit?
     @State private var selectedSeason = "Spring"
     @State private var hashtagText = ""
     @State private var selectedItem: String = "Üst"
@@ -31,15 +31,14 @@ struct CreateCombineView: View {
     @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
-        NavigationView {
             VStack {
                 Spacer()
                 
                 VStack(spacing: 1) {
-                    if newCombine != nil {
-                        CombineView(combine: newCombine!)
+                    if newOutfit != nil {
+                        OutfitView(outfit: newOutfit!)
                     } else {
-                        CombineView(combine: MockData().combines[0])
+                        OutfitView(outfit: MockData().outfits[0])
                     }
                 }
                 .background(Color(UIColor(red: 0.976, green: 0.976, blue: 0.976, alpha: 1.0)))
@@ -65,11 +64,11 @@ struct CreateCombineView: View {
                         Text("Resort").tag(Seasons.Resort)
                         Text("Pre-Fall").tag(Seasons.Pre_Fall)
                     }
-                    .pickerStyle(SegmentedPickerStyle()) // Apply .pickerStyle modifier directly to Picker
+                    .pickerStyle(SegmentedPickerStyle())
                     .frame(width: UIScreen.screenWidth)
                     .clipped()
                     .scaleEffect(0.8)
-                    .font(Font.system(size: 10)) // Change the font and size here
+                    .font(Font.system(size: 10))
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .padding(.trailing, UIScreen.screenWidth * 0.1)
@@ -111,44 +110,90 @@ struct CreateCombineView: View {
                     
                     
                     Spacer()
-                    
-                    
+                   
+                   
                     ScrollView(.vertical) {
                         if let selectedSubItem = subItems.first {
-                            VStack {
-                                Text("Galeri: \(selectedItem) -> \(selectedSubItem)")
-                                    .font(.system(size: 10))
+                            VStack() {
+                                LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 10) {
+                                    ForEach(MockData().cloths) { cloth in
+                                        Image(cloth.clothImage)
+                                            .resizable()
+                                            .aspectRatio(contentMode: .fit)
+                                            .frame(height: 100)
+                                            .frame(width: UIScreen.screenWidth * 0.15)
+
+                                    }
+                                }
                             }
-                        }}
+                            .padding(.top,20)
+                        }
+                    }
                     Spacer()
                 }
                 .overlay(
                     RoundedRectangle(cornerRadius: 4)
                         .stroke(Color.gray, lineWidth: 0.2)
-                )
+                        )
+           
+                    Spacer()
+                    
+                    HStack {
+                        Button(action: {
+                            // New Cloth butonuna tıklandığında yapılacak işlemler
+                        }) {
+                            Text("New Cloth")
+                                .font(.system(size: 12))
+                                .foregroundColor(.white)
+                                .frame(maxWidth: .infinity)
+                                .padding(.vertical, 8)
+                                .background(Color.blue.opacity(0.8))
+                                .cornerRadius(8)
+                        }
+                        
+                        Button(action: {
+                        }) {
+                            Text("Save")
+                                .font(.system(size: 12))
+                                .foregroundColor(.white)
+                                .frame(maxWidth: .infinity)
+                                .padding(.vertical, 8)
+                                .background(Color.green.opacity(0.8))
+                                .cornerRadius(8)
+                        }
+                        
+                        Button(action: {
+                        }) {
+                            Text("Clear")
+                                .font(.system(size: 12))
+                                .foregroundColor(.white)
+                                .frame(maxWidth: .infinity)
+                                .padding(.vertical, 8)
+                                .background(Color.red.opacity(0.8))
+                                .cornerRadius(8)
+                        }
+                    }
+                    .padding(.bottom, UIScreen.screenWidth * 0.05)
                 
+
             }
-            
-            
-            
             .padding(.all, UIScreen.screenWidth * 0.05)
             .navigationBarTitleDisplayMode(.inline)
-            .navigationBarTitle("Combine", displayMode: .inline)
+            .navigationBarTitle("Outfit", displayMode: .inline)
             .onAppear {
-                selectedItem = "Üst" // Set "Üst" as the initially selected main category
+                selectedItem = "Üst"
                 subItems = subItemsDictionary[selectedItem] ?? []
             }
             
-                Spacer()
             
         }
-    }
+    
 }
 
 
 
-struct CreateCombineView_Preview: PreviewProvider {
+struct CreateOutfitView_Preview: PreviewProvider {
     static var previews: some View {
-        CreateCombineView()
+        CreateOutfitView()
     }
 }

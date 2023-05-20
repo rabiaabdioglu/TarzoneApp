@@ -8,8 +8,8 @@
 
 import SwiftUI
 struct PostGridView: View {
-    let combine: [CombinePost]
-    @State private var selectedPost: CombinePost? = nil
+    let outfit: [OutfitPost]
+    @State private var selectedPost: OutfitPost? = nil
     @State private var isPresentingChoosenPostView = false
     
     private let columns = [
@@ -20,13 +20,13 @@ struct PostGridView: View {
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
                    LazyVGrid(columns: columns, spacing: nil) {
-                       ForEach(combine) { post in
+                       ForEach(outfit) { post in
                            Button(action: {
                                selectedPost = post
                                isPresentingChoosenPostView = true
                            }) {
                                Spacer()
-                               CombineView(combine: post.combine)
+                               OutfitView(outfit: post.outfit)
                                    .scaledToFit()
                                    .scaleEffect(0.6)
                                    .frame(width: UIScreen.main.bounds.size.width / 2.4, height: UIScreen.main.bounds.size.width / 2.4)
@@ -44,8 +44,7 @@ struct PostGridView: View {
                }
 
         .fullScreenCover(item: $selectedPost) { post in
-            ChoosenPostView(chosenCombinePost: post)
-                .animation(nil)
+            ChoosenPostView(chosenOutfitPost: post)
 
         }
 
@@ -54,6 +53,6 @@ struct PostGridView: View {
 
 struct PostGridView_Previews: PreviewProvider {
     static var previews: some View {
-        PostGridView(combine: MockData().posts)
+        PostGridView(outfit: MockData().posts)
     }
 }

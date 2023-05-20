@@ -15,7 +15,7 @@ final class TabContainerViewModel : ObservableObject{
         TabItem(tabImage: "timeline", tabName: "Timeline", tabItems: .timeline),
         .init(tabImage: "inspiration", tabName: "Saved", tabItems: .inspiration),
         .init(tabImage: "scanCloth", tabName: "Scan", tabItems: .scanCloth),
-        .init(tabImage: "combineLab", tabName: "Combine", tabItems: .combineLab),
+        .init(tabImage: "outfitLab", tabName: "Outfit", tabItems: .outfitLab),
         .init(tabImage: "profile", tabName: "Profile", tabItems: .profile)
 
     

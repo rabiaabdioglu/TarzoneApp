@@ -14,7 +14,7 @@ struct userProfile: Identifiable {
     var followersId : [String]
     var followedId  : [String]
     let description : String
-    var combinePosts: [CombinePost]
+    var outfitPosts: [OutfitPost]
     
     
 }

@@ -8,14 +8,14 @@
 import SwiftUI
 
 struct ChoosenPostView: View {
-    var chosenCombinePost: CombinePost
+    var chosenOutfitPost: OutfitPost
     @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
-        NavigationView {
+        NavigationView{
             VStack(spacing: UIScreen.screenWidth * 0.1) {
                 VStack {
-                    CombineView(combine: chosenCombinePost.combine)
+                    OutfitView(outfit: chosenOutfitPost.outfit)
                         .scaledToFit()
                         .scaleEffect(1)
                         .padding(0)
@@ -27,7 +27,7 @@ struct ChoosenPostView: View {
                 VStack {
                     HStack {
                         Text("Hashtag     :    ")
-                        ForEach(chosenCombinePost.hashtag, id: \.self) { hashtag in
+                        ForEach(chosenOutfitPost.hashtag, id: \.self) { hashtag in
                             Text("#" + hashtag)
                         }
                     }
@@ -36,43 +36,44 @@ struct ChoosenPostView: View {
                     
                     HStack {
                         Text("Season      :     ")
-                        Text(seasonToString(chosenCombinePost.season))
+                        Text(seasonToString(chosenOutfitPost.season))
                     }
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .padding(.trailing, UIScreen.screenWidth * 0.2)
                     
                     HStack {
-                        Text(chosenCombinePost.description)
+                        Text(chosenOutfitPost.description)
                         Spacer()
-                        Text(chosenCombinePost.description)
+                        Text(chosenOutfitPost.description)
                     }
                     .alignmentGuide(.leading) { _ in UIScreen.main.bounds.size.width * 0.1 }
                 }
                 .padding(.leading, UIScreen.screenWidth * 0.1)
                 
                 HStack {
-                    UserProfileView(user: MockData().users[chosenCombinePost.userId])
+                    UserProfileView(user: MockData().users[chosenOutfitPost.userId])
                         .padding(.trailing, UIScreen.screenWidth * 0.1)
                     
+                    
                     Spacer()
-                    Text(chosenCombinePost.likes)
-                    Image(chosenCombinePost.isLiked ? "starFill" : "star")
+                    Text(chosenOutfitPost.likes)
+                    Image(chosenOutfitPost.isLiked ? "starFill" : "star")
                         .resizable()
-                        .frame(width: 24, height: 24)
+                        .frame(width: UIScreen.screenWidth * 0.05, height: UIScreen.screenWidth * 0.05)
                         .padding(.trailing, UIScreen.screenWidth * 0.1)
                 }
                 .padding(.leading, UIScreen.screenWidth * 0.1)
                 .overlay(
                     Divider()
                         .background(Color.gray)
-                        .padding(.bottom, 100)
+                        .padding(.bottom, UIScreen.screenWidth * 0.2)
                 )
-            }   .font(Font.custom("HelveticaNeue-Light", size: 15))
+            }   .font(Font.custom("HelveticaNeue-Light", size: UIScreen.screenWidth * 0.025))
                 .navigationBarTitleDisplayMode(.inline)
-                .navigationBarTitle("Combine", displayMode: .inline)
+                .navigationBarTitle("Outfit", displayMode: .inline)
                 .navigationBarBackButtonHidden(true)
                 .navigationBarItems(leading: backButton, trailing:Group {
-                    if MockData().users[chosenCombinePost.userId].isMe {
+                    if MockData().users[chosenOutfitPost.userId].id == "0" {
                         Button(action: {
                             // Delete işlemi
                         }) {
@@ -87,8 +88,8 @@ struct ChoosenPostView: View {
                 )
             Spacer() // Aşağıda boşluk eklemek için Spacer kullanılır
             
-        }
-    }
+            
+        }}
     
     var backButton: some View {
         Button(action: {
@@ -108,13 +109,13 @@ struct ChoosenPostView: View {
                 .imageScale(.large)
                 .foregroundColor(Color(red: 153/255, green: 153/255, blue: 153/255))
             
-        }      
+        }
     }
     
 }
 
 struct ChoosenPostView_Previews: PreviewProvider {
     static var previews: some View {
-        ChoosenPostView(chosenCombinePost: MockData().posts[1])
+        ChoosenPostView(chosenOutfitPost: MockData().posts[1])
     }
 }

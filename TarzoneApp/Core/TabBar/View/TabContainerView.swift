@@ -2,6 +2,7 @@
 //  TabbarView.swift
 //  Tarzone
 //
+
 //  Created by Rabia Abdioğlu on 8.04.2023.
 //
 
@@ -13,6 +14,7 @@ struct TabbarView: View {
     
 @State private var tabContainerViewModels = TabContainerViewModel()
 @State private var selectedTab: TabItem.TabItems = .timeline // Default tab
+    let user :User
 
 var body: some View {
     
@@ -43,13 +45,13 @@ func tabView(for tabItemType: TabItem.TabItems) -> some View {
     case .timeline:
         TimeLineView()
     case .inspiration:
-        SavedCombinesView()
+        SavedOutfitView()
     case .scanCloth:
-        Text("Scan")
-    case .combineLab:
-        Text("Combine")
+        ScanClothView()
+    case .outfitLab:
+        CreateOutfitView()
     case .profile:
-        ProfileView(user: MockData().users[0])    }
+        CurrentUser(user: user)    }
 }
     
     
@@ -58,7 +60,7 @@ func tabView(for tabItemType: TabItem.TabItems) -> some View {
 
 struct TabbarView_Previews: PreviewProvider {
 static var previews: some View {
-    TabbarView()
+    TabbarView(user : MockData().users[0])
     
 }
 }

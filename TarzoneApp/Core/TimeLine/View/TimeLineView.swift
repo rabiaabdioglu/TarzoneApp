@@ -13,12 +13,13 @@ struct TimeLineView: View {
     @State private var searchText : String = ""
 
     var body: some View {
-        NavigationView{
             
             VStack{
                 ScrollView {
                     SearchBar(text: $searchText, placeholder: "Search")
-                    PostGridView(combine: MockData().posts)
+                    let userPosts = MockData().posts.filter { $0.userId != 0}
+
+                    PostGridView(outfit: userPosts)
                 }
             }
             .navigationBarTitleDisplayMode(.inline)
@@ -32,7 +33,7 @@ struct TimeLineView: View {
                             .frame(maxWidth: .infinity)
                             .frame(height: 0)
                     }
-                }  }}}
+                }  }}
 
     
 }

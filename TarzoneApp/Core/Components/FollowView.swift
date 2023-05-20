@@ -26,19 +26,19 @@ struct FollowView: View {
                     }) {
                         HStack {
                             Spacer()
-                            Text(user.hasFollowed  ? " Follow " : " Unfollow ")
+                            Text(user.hasFollowed!  ? " Follow " : " Unfollow ")
                                 .font(Font.system(size: UIScreen.screenWidth * 0.020, weight: .semibold))
-                                .foregroundColor(user.hasFollowed ? Color.blue : Color.white)
+                                .foregroundColor(user.hasFollowed! ? Color.blue : Color.white)
                                 .clipped()
                             Spacer()
                         }
                     }
                     .padding()
-                    .background(user.hasFollowed ? Color.white : Color.blue)
+                    .background(user.hasFollowed! ? Color.white : Color.blue)
                     .frame(width: UIScreen.screenWidth * 0.30 , height: UIScreen.screenHeight * 0.04, alignment: .center)
                     .clipped()
                     .cornerRadius(6)
-                    .border(user.hasFollowed ? Color.blue : Color.white, width: 0.5)
+                    .border(user.hasFollowed! ? Color.blue : Color.white, width: 0.5)
                     
                 }
             
