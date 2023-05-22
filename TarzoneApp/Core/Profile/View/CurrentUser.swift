@@ -6,21 +6,22 @@ struct CurrentUser: View {
     
     @State private var isFollowersActive = false
     @State private var isFollowingActive = false
-    
+    @State private var editProfile = false
     var body: some View {
 
         NavigationStack {
             Spacer()
 
-            VStack(spacing: UIScreen.screenHeight * 0.07) {
+            VStack(spacing: 1) {
                 ScrollView {
-                    VStack(spacing: UIScreen.screenWidth * 0.1) {
+                    VStack(spacing: 20) {
                         HStack(spacing: UIScreen.screenWidth * 0.10) {
                             UserProfileView(user: user)
                                 .disabled(true)
                         
                                 Button(action: {
-                                    // Edit butonuna tıklandığında gerçekleşecek işlemler
+                                    editProfile.toggle()
+                                    
                                 }) {
                                     Text("Edit")
                                         .padding(.horizontal, 10)
@@ -28,11 +29,17 @@ struct CurrentUser: View {
                                         .foregroundColor(.white)
                                         .background(Color.accentColor)
                                         .cornerRadius(5)
+                                    
                                 }
+                                .sheet(isPresented: $editProfile, content: {
+                                EditProfileView(user: user)
+                                })
                             
                         }
                         .padding()
-                        
+                        HStack{
+                            Text(user.description ?? " ")
+                        }
                         HStack(spacing: UIScreen.screenHeight * 0.03) {
                             Text("\(user.followers!)\nOutfit")
                                 .multilineTextAlignment(.center)
@@ -51,12 +58,10 @@ struct CurrentUser: View {
                         }
                         
                         Spacer()
-                    }
-                    .overlay(
                         Divider()
-                            .background(Color.gray)
-                            .padding(.top, 150)
-                    )
+   }
+                  
+                     
                     //değişecek
                     let userPosts = MockData().posts.filter { $0.userId == 0}
 

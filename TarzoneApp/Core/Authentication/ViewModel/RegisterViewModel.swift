@@ -18,9 +18,13 @@ class RegisterViewModel: ObservableObject{
         
         
         try await AuthService.shared.createUser(email: email, password: password, username: username)
-          username = ""
-          email = ""
-          password = ""
+     
+        username = ""
+        email = ""
+        password = ""
+
+        
+        
     }
     
     

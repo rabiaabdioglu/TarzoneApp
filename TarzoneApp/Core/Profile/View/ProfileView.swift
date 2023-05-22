@@ -12,28 +12,31 @@ struct ProfileView: View {
         NavigationStack {
             Spacer()
 
-            VStack(spacing: UIScreen.screenHeight * 0.07) {
+            VStack(spacing: 1) {
                 ScrollView {
-                    VStack(spacing: UIScreen.screenWidth * 0.1) {
+                    VStack(spacing: 20) {
                         HStack(spacing: UIScreen.screenWidth * 0.10) {
                             UserProfileView(user: user)
                                 .disabled(true)
                             
-                     
-                                Button(action: {
-                                    // Takip et butonuna tıklandığında gerçekleşecek işlemler
-                                }) {
-                                    Text(user.hasFollowed! ? "Unfollow" : "Follow")
-                                        .padding(.horizontal, 10)
-                                        .padding(.vertical, 5)
-                                        .foregroundColor(.white)
-                                        .background(user.hasFollowed! ? Color(red: 0.718, green: 0.467, blue: 0.369)  : Color.green)
-                                        .cornerRadius(5)
-                                }
-                        
+                            
+                            Button(action: {
+                                // Takip et butonuna tıklandığında gerçekleşecek işlemler
+                            }) {
+                                Text(user.hasFollowed! ? "Unfollow" : "Follow")
+                                    .padding(.horizontal, 10)
+                                    .padding(.vertical, 5)
+                                    .foregroundColor(.white)
+                                    .background(user.hasFollowed! ? Color(red: 0.718, green: 0.467, blue: 0.369)  : Color.green)
+                                    .cornerRadius(5)
+                            }
+                            
                         }
                         .padding()
                         
+                        HStack{
+                            Text(user.description ?? " ")
+                        }
                         HStack(spacing: UIScreen.screenHeight * 0.03) {
                             Text("\(user.followers!)\nOutfit")
                                 .multilineTextAlignment(.center)
@@ -51,13 +54,10 @@ struct ProfileView: View {
                                 }
                         }
                         
-                        Spacer()
-                    }
-                    .overlay(
                         Divider()
-                            .background(Color.gray)
-                            .padding(.top, 150)
-                    )
+
+                    }
+                
                     
                     if user.privacy! {
                         VStack {

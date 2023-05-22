@@ -43,6 +43,7 @@ class AuthService{
         }
     }
     
+    //fetch user
     @MainActor
     func loadUserData() async throws{
         guard let currenyUid = self.userSession?.uid else{return}
@@ -72,6 +73,6 @@ class AuthService{
         
     }
     
-    
+        
     
 }

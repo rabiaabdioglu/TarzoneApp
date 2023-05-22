@@ -6,7 +6,7 @@
 //
 
 import Foundation
-
+import Firebase
 
 struct User: Identifiable ,Codable{
 
@@ -19,26 +19,32 @@ struct User: Identifiable ,Codable{
     var hasFollowed : Bool? = false
     var followers : Int32? = 0
     var following : Int32? = 0
-    
-    
+    var description :String?
+    var isCurrentUser: Bool{
+        
+        
+        guard let currentUid = Auth.auth().currentUser?.uid else{ return false}
+        return currentUid == id
+        
+    }
     
 }
 
 extension User{
     
     static var MOCK_USERS:[User]=[
-        .init(id: NSUUID().uuidString, email: "r@gmail.com", userName: "@rabiabdglu", name: "Rabia Abdioğlu", userImage: "user_1", privacy: false, hasFollowed: true, followers: 10, following: 22),
+        .init(id: NSUUID().uuidString, email: "r@gmail.com", userName: "@rabiabdglu", name: "Rabia Abdioğlu", userImage: "user_1", privacy: false, hasFollowed: true, followers: 10, following: 22, description: " "),
         
-            .init(id: NSUUID().uuidString, email:   "r@gmail.com",userName: "@enesraf", name: "Enes Tuğberk Kılıç", userImage: "user_2", privacy: false, hasFollowed: true, followers: 10, following: 22),
+            .init(id: NSUUID().uuidString, email:   "r@gmail.com",userName: "@enesraf", name: "Enes Tuğberk Kılıç", userImage: "user_2", privacy: false, hasFollowed: true, followers: 10, following: 22, description: " "),
             
         
-            .init(id: NSUUID().uuidString, email:   "r@gmail.com",userName: "@semihanim", name: "Semiha Arslan Abdioğlu", userImage: "user_3", privacy: true, hasFollowed: true, followers: 10, following: 22),
+            .init(id: NSUUID().uuidString, email:   "r@gmail.com",userName: "@semihanim", name: "Semiha Arslan Abdioğlu", userImage: "user_3", privacy: true, hasFollowed: true, followers: 10, following: 22, description: " "),
             
         
-            .init(id: NSUUID().uuidString, email:   "r@gmail.com",userName: "@emredersin", name: "Yusuf Emre Abdioğlu", userImage: "user_4", privacy: false, hasFollowed: false,  followers: 10, following: 22),
+            .init(id: NSUUID().uuidString, email:   "r@gmail.com",userName: "@emredersin", name: "Yusuf Emre Abdioğlu", userImage: "user_4", privacy: false, hasFollowed: false,  followers: 10, following: 22, description: " "),
             
         
-            .init(id: NSUUID().uuidString, email:   "r@gmail.com",userName: "@emirhanim", name: "Emirhan Çağlar", userImage: "user_5", privacy: false, hasFollowed: true,  followers: 10, following: 22)
+            .init(id: NSUUID().uuidString, email:   "r@gmail.com",userName: "@emirhanim", name: "Emirhan Çağlar", userImage: "user_5", privacy: false, hasFollowed: true,  followers: 10, following: 22, description: " ")
             
         
         

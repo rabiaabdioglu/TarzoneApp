@@ -25,20 +25,15 @@ struct UserProfileView: View {
             }
         }) {
             HStack {
-                Image(user.userImage!)
-                    .resizable()
-                    .cornerRadius(100)
-                    .frame(width: UIScreen.screenWidth * 0.13, height: UIScreen.screenWidth * 0.13, alignment: .center)
-                    .clipped() 
-                    .padding(.leading, 5)
+              CircularProfileImageView(user: user)
                 
                 VStack(alignment: .leading) {
-                    Text(user.name!)
+                    Text(user.name ?? "User Name")
                         .font(Font.custom("HelveticaNeue", size: UIScreen.screenWidth * 0.03))
                         .padding(0.1)
                         .foregroundColor(.black)
 
-                    Text(user.userName)
+                    Text("@" + user.userName )
                         .font(Font.custom("HelveticaNeue-Light", size: UIScreen.screenWidth * 0.025))
                         .padding(0.1)
                         .foregroundColor(.black)
@@ -48,9 +43,13 @@ struct UserProfileView: View {
         }
         .padding(.trailing, 1)
         .fullScreenCover(isPresented: $isProfileActive, content: {
-            
-            ProfileView(user: user)
-                .edgesIgnoringSafeArea(.all)
+            if  user.isCurrentUser == true{
+                CurrentUser(user: user)
+                .edgesIgnoringSafeArea(.all)}
+            else{
+                ProfileView(user: user)
+                .edgesIgnoringSafeArea(.all)}
+   
             
             
         })
