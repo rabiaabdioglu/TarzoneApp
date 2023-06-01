@@ -8,7 +8,8 @@
 import Foundation
 
 
-struct Category  {
-    
-    let catName : String
+struct Category: Identifiable {
+    let id : Int
+    let name: String
+    let subcategories: [Subcategory]
 }

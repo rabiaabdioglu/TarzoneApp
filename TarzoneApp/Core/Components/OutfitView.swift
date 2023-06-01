@@ -24,23 +24,23 @@ struct OutfitView: View {
                 
                 VStack {
                     
-                    Image(outfit.outwear.clothImage)
+                    Image(MockData().cloths[outfit.outwear].clothImage)
                         .resizable()
                         .frame(width: UIScreen.screenWidth * 0.2, height:UIScreen.screenHeight * 0.30)
                         .scaleEffect(0.8) // İçeriği küçültmek için scaleEffect kullanın
                     
                 }
                 
-                if outfit.dress.clothImage == ""
+                if MockData().cloths[outfit.dress].clothImage == ""
                 {
                     VStack {
                         
-                        Image(outfit.top.clothImage)
+                        Image(MockData().cloths[outfit.top].clothImage)
                             .resizable()
                             .frame(width: UIScreen.screenWidth * 0.2, height:UIScreen.screenHeight * 0.15)
                             .scaleEffect(0.9) // İçeriği küçültmek için scaleEffect kullanın
                         
-                        Image(outfit.bottom.clothImage)
+                        Image(MockData().cloths[outfit.bottom].clothImage)
                             .resizable()
                             .frame(width: UIScreen.screenWidth * 0.2, height:UIScreen.screenHeight * 0.15)
                             .scaleEffect(0.9) // İçeriği küçültmek için scaleEffect kullanın
@@ -51,7 +51,7 @@ struct OutfitView: View {
                 else {
                     VStack {
                         
-                        Image(outfit.dress.clothImage)
+                        Image(MockData().cloths[outfit.dress].clothImage)
                             .resizable()
                             .frame(width: UIScreen.screenWidth * 0.2, height:UIScreen.screenHeight * 0.30)
                             .scaleEffect(0.8) // İçeriği küçültmek için scaleEffect kullanın
@@ -62,18 +62,18 @@ struct OutfitView: View {
                 
                 VStack {
                     
-                    Image(outfit.accessory.clothImage)
+                    Image(MockData().cloths[outfit.accessory].clothImage)
                         .resizable()
                         .frame(width: UIScreen.screenWidth * 0.2, height:UIScreen.screenHeight * 0.10)
                         .scaleEffect(0.8) // İçeriği küçültmek için scaleEffect kullanın
                     
                     
-                    Image(outfit.bag.clothImage)
+                    Image(MockData().cloths[outfit.bag].clothImage)
                         .resizable()
                         .frame(width: UIScreen.screenWidth * 0.2, height:UIScreen.screenHeight * 0.10)
                         .scaleEffect(0.8) // İçeriği küçültmek için scaleEffect kullanın
                     
-                    Image(outfit.shoe.clothImage)
+                    Image(MockData().cloths[outfit.shoe].clothImage)
                         .resizable()
                         .frame(width: UIScreen.screenWidth * 0.2, height:UIScreen.screenHeight * 0.10)
                         .scaleEffect(0.8) // İçeriği küçültmek için scaleEffect kullanın

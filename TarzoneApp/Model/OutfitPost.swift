@@ -10,9 +10,9 @@ import Foundation
 
 struct OutfitPost: Identifiable {
     
-    let id = UUID()
+    let id : String
     let outfit : Outfit
-    var likes : String
+    var likes : Int
     var isLiked : Bool = false
     var description : String
     var season : Seasons

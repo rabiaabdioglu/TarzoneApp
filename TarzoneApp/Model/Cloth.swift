@@ -6,17 +6,20 @@
 //
 import Foundation
 import SwiftUI
- 
-struct Cloth: Identifiable {
+ import Firebase
+struct Cloth: Identifiable , Encodable , Hashable{
     
-    let id = UUID()
-    let idSubCategory : String
+    var id : String
+    var userId : String
+    var idCategory : Int
+    var idSubCategory : Int
     var color : String
-    var product_id : String // dışarı yönlendirme
     var url : String // site urlsi
     var clothImage : String
     var size : String
-    var createdAt : Date
-    var userId : Int
+    var createdAt : Timestamp
+    var hashtags: [String]
+    
+    
 }
 

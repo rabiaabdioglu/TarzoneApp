@@ -10,14 +10,14 @@ import Foundation
 
 struct Outfit: Identifiable {
     
-    let id = UUID()
-    var top : Cloth
-    var bottom : Cloth
-    var dress : Cloth
-    var shoe : Cloth
-    var bag : Cloth
-    var outwear : Cloth
-    var accessory : Cloth
+    let id : String
+    var top : Int
+    var bottom : Int
+    var dress : Int
+    var shoe : Int
+    var bag : Int
+    var outwear : Int
+    var accessory : Int
     var userId : Int
 
 

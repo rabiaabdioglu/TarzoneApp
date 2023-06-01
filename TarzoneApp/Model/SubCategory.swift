@@ -8,10 +8,7 @@
 import Foundation
 
 
-struct subCategory: Identifiable {
-    
-    let id = UUID()
-    let catId : Category
-    let subCatName : String
-    
+struct Subcategory: Identifiable {
+    let id : Int
+    let name: String
 }

@@ -13,7 +13,7 @@ struct SavedOutfitView: View {
         NavigationView{
         VStack() {
             ScrollView {
-                PostGridView(outfit: MockData().posts)
+          //      PostGridView(outfit: MockData().posts)
             }
         }
         .navigationTitle("Inspirations")

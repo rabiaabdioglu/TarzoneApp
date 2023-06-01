@@ -56,7 +56,7 @@ struct ChoosenPostView: View {
                     
                     
                     Spacer()
-                    Text(chosenOutfitPost.likes)
+                    Text("\(chosenOutfitPost.likes)")
                     Image(chosenOutfitPost.isLiked ? "starFill" : "star")
                         .resizable()
                         .frame(width: UIScreen.screenWidth * 0.05, height: UIScreen.screenWidth * 0.05)

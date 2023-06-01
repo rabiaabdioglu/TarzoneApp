@@ -6,7 +6,7 @@
 //
 
 import Foundation
-
+import Firebase
 struct MockData {
     
 
@@ -35,97 +35,34 @@ struct MockData {
     
     
     var cloths: [Cloth] = [
-        Cloth(idSubCategory: "0", color: "black", product_id: "id", url: "url", clothImage: "top", size: "M", createdAt: Date.now, userId: 1),
-        Cloth(idSubCategory: "1", color: "tan", product_id: "", url: "", clothImage: "bottom", size: "M", createdAt: Date.now, userId: 2),
-        Cloth(idSubCategory: "2", color: "white", product_id: "", url: "", clothImage: "dress", size: "s", createdAt: Date.now, userId: 3),
-        Cloth(idSubCategory: "3", color: "white", product_id: "", url: "", clothImage: "shoe", size: "37", createdAt: Date.now,  userId: 4),
-        Cloth(idSubCategory: "4", color: "black", product_id: "", url: "", clothImage: "bag", size: "", createdAt: Date.now,  userId: 5),
-        Cloth(idSubCategory: "5", color: "blue", product_id: "", url: "", clothImage: "outwear", size: "38", createdAt: Date.now,  userId: 0),
-        Cloth(idSubCategory: "6", color: "black", product_id: "", url: "", clothImage: "accessory", size: "", createdAt: Date.now,userId: 1)
+        Cloth(id: NSUUID().uuidString ,userId: "1",idCategory: 0, idSubCategory: 0, color: "black",  url: "url", clothImage: "top", size: "M", createdAt: Timestamp(), hashtags: [""]),
+       Cloth(id: NSUUID().uuidString ,userId: "2",idCategory: 0, idSubCategory: 1, color: "tan",  url: "", clothImage: "bottom", size: "M", createdAt: Timestamp(), hashtags: [""]),
+       Cloth(id: NSUUID().uuidString ,userId: "3",idCategory: 0, idSubCategory: 2, color: "white", url: "", clothImage: "dress", size: "s", createdAt: Timestamp(), hashtags: [""]),
+       Cloth(id: NSUUID().uuidString ,userId: "4",idCategory: 0, idSubCategory: 3, color: "white",  url: "", clothImage: "shoe", size: "37", createdAt: Timestamp(), hashtags: [""]),
+       Cloth(id: NSUUID().uuidString ,userId: "5",idCategory: 0, idSubCategory: 4, color: "black", url: "", clothImage: "bag", size: "", createdAt: Timestamp(), hashtags: [""]),
+       Cloth(id: NSUUID().uuidString ,userId: "0",idCategory: 0, idSubCategory: 5, color: "blue",  url: "", clothImage: "outwear", size: "38", createdAt: Timestamp(), hashtags: [""]),
+       Cloth(id: NSUUID().uuidString ,userId: "1",idCategory: 0, idSubCategory: 6, color: "black", url: "", clothImage: "accessory", size: "", createdAt: Timestamp(), hashtags: [""])
         
         
  ]
     
     var outfits: [Outfit]=[
      
-        Outfit(top: Cloth(idSubCategory: "1", color: "black", product_id: "id", url: "url", clothImage: "empty", size: "M", createdAt: Date.now, userId: 1), bottom: Cloth(idSubCategory: "2", color: "tan", product_id: "", url: "", clothImage: "empty", size: "M", createdAt: Date.now, userId: 1), dress: Cloth(idSubCategory: "", color: "", product_id: "", url: "", clothImage: "", size: "", createdAt: Date.now, userId: 1), shoe: Cloth(idSubCategory: "4", color: "white", product_id: "", url: "", clothImage: "empty", size: "37", createdAt: Date.now, userId: 1), bag: Cloth(idSubCategory: "5", color: "black", product_id: "", url: "", clothImage: "empty", size: "", createdAt: Date.now, userId: 1), outwear: Cloth(idSubCategory: "6", color: "blue", product_id: "", url: "", clothImage: "empty", size: "38", createdAt: Date.now, userId: 1), accessory: Cloth(idSubCategory: "7", color: "black", product_id: "", url: "", clothImage: "empty", size: "", createdAt: Date.now, userId: 1), userId: 1),
-        
-        Outfit(top: Cloth(idSubCategory: "1", color: "black", product_id: "id", url: "url", clothImage: "top", size: "M", createdAt: Date.now, userId: 1), bottom: Cloth(idSubCategory: "2", color: "tan", product_id: "", url: "", clothImage: "bottom", size: "M", createdAt: Date.now, userId: 1), dress: Cloth(idSubCategory: "", color: "", product_id: "", url: "", clothImage: "", size: "", createdAt: Date.now, userId: 1), shoe: Cloth(idSubCategory: "4", color: "white", product_id: "", url: "", clothImage: "shoe", size: "37", createdAt: Date.now, userId: 1), bag: Cloth(idSubCategory: "5", color: "black", product_id: "", url: "", clothImage: "bag", size: "", createdAt: Date.now, userId: 1), outwear: Cloth(idSubCategory: "6", color: "blue", product_id: "", url: "", clothImage: "outwear", size: "38", createdAt: Date.now, userId: 1), accessory: Cloth(idSubCategory: "7", color: "black", product_id: "", url: "", clothImage: "accessory", size: "", createdAt: Date.now, userId: 1), userId: 1),
-        Outfit(top: Cloth(idSubCategory: "1", color: "black", product_id: "id", url: "url", clothImage: "", size: "M", createdAt: Date.now, userId: 1), bottom: Cloth(idSubCategory: "2", color: "tan", product_id: "", url: "", clothImage: "", size: "M", createdAt: Date.now, userId: 1), dress: Cloth(idSubCategory: "3", color: "tan", product_id: "", url: "", clothImage: "dress", size: "", createdAt: Date.now, userId: 1), shoe: Cloth(idSubCategory: "4", color: "white", product_id: "", url: "", clothImage: "shoe", size: "37", createdAt: Date.now, userId: 1), bag: Cloth(idSubCategory: "5", color: "black", product_id: "", url: "", clothImage: "bag", size: "", createdAt: Date.now, userId: 1), outwear: Cloth(idSubCategory: "6", color: "blue", product_id: "", url: "", clothImage: "outwear", size: "38", createdAt: Date.now, userId: 1), accessory: Cloth(idSubCategory: "7", color: "black", product_id: "", url: "", clothImage: "accessory", size: "", createdAt: Date.now, userId: 1), userId: 1),
-        Outfit(top: Cloth(idSubCategory: "1", color: "black", product_id: "id", url: "url", clothImage: "", size: "M", createdAt: Date.now, userId: 1), bottom: Cloth(idSubCategory: "2", color: "tan", product_id: "", url: "", clothImage: "", size: "M", createdAt: Date.now, userId: 1), dress: Cloth(idSubCategory: "3", color: "tan", product_id: "", url: "", clothImage: "dress", size: "", createdAt: Date.now, userId: 1), shoe: Cloth(idSubCategory: "4", color: "white", product_id: "", url: "", clothImage: "shoe", size: "37", createdAt: Date.now, userId: 1), bag: Cloth(idSubCategory: "5", color: "black", product_id: "", url: "", clothImage: "bag", size: "", createdAt: Date.now, userId: 1), outwear: Cloth(idSubCategory: "6", color: "blue", product_id: "", url: "", clothImage: "outwear", size: "38", createdAt: Date.now, userId: 1), accessory: Cloth(idSubCategory: "7", color: "black", product_id: "", url: "", clothImage: "accessory", size: "", createdAt: Date.now, userId: 1), userId: 1)
-        
-    ]
+        Outfit(id: NSUUID().uuidString, top: 0, bottom: 1, dress: 2, shoe: 3, bag: 4, outwear: 5, accessory: 6, userId: 0)
+ ]
     
     
     
     var posts: [OutfitPost] = [
         
-        OutfitPost(outfit: Outfit(top: Cloth(idSubCategory: "0", color: "black", product_id: "id", url: "url", clothImage: "top", size: "M", createdAt: Date.now, userId: 1), bottom: Cloth(idSubCategory: "1", color: "tan", product_id: "", url: "", clothImage: "bottom", size: "M", createdAt: Date.now, userId: 1), dress: Cloth(idSubCategory: "", color: "", product_id: "", url: "", clothImage: "", size: "", createdAt: Date.now, userId: 1), shoe: Cloth(idSubCategory: "3", color: "white", product_id: "", url: "", clothImage: "shoe", size: "37", createdAt: Date.now, userId: 1), bag: Cloth(idSubCategory: "4", color: "black", product_id: "", url: "", clothImage: "bag", size: "", createdAt: Date.now, userId: 1), outwear: Cloth(idSubCategory: "5", color: "blue", product_id: "", url: "", clothImage: "outwear", size: "38", createdAt: Date.now, userId: 1), accessory: Cloth(idSubCategory: "6", color: "black", product_id: "", url: "", clothImage: "accessory", size: "", createdAt: Date.now, userId: 1), userId: 1), likes: "20", isLiked : false, description: "", season: Seasons.Fall_Winter, hashtag: ["casual","floral","denim"], userId: 2),
-        
-        OutfitPost(outfit: Outfit(top: Cloth(idSubCategory: "0", color: "black", product_id: "id", url: "url", clothImage: "", size: "M", createdAt: Date.now, userId: 1), bottom: Cloth(idSubCategory: "2", color: "tan", product_id: "", url: "", clothImage: "", size: "M", createdAt: Date.now, userId: 1), dress: Cloth(idSubCategory: "2", color: "tan", product_id: "", url: "", clothImage: "dress", size: "", createdAt: Date.now, userId: 1), shoe: Cloth(idSubCategory: "3", color: "white", product_id: "", url: "", clothImage: "shoe", size: "37", createdAt: Date.now, userId: 1), bag: Cloth(idSubCategory: "4", color: "black", product_id: "", url: "", clothImage: "bag", size: "", createdAt: Date.now, userId: 1), outwear: Cloth(idSubCategory: "5", color: "blue", product_id: "", url: "", clothImage: "outwear", size: "38", createdAt: Date.now, userId: 1), accessory: Cloth(idSubCategory: "6", color: "black", product_id: "", url: "", clothImage: "accessory", size: "", createdAt: Date.now, userId: 1), userId: 1), likes: "20", isLiked : true , description: "", season: Seasons.Fall_Winter, hashtag: ["casual","floral","denim"], userId: 0),
-        
-        OutfitPost(outfit: Outfit(top: Cloth(idSubCategory: "0", color: "black", product_id: "id", url: "url", clothImage: "top", size: "M", createdAt: Date.now, userId: 1), bottom: Cloth(idSubCategory: "1", color: "tan", product_id: "", url: "", clothImage: "bottom", size: "M", createdAt: Date.now, userId: 1), dress: Cloth(idSubCategory: "", color: "", product_id: "", url: "", clothImage: "", size: "", createdAt: Date.now, userId: 1), shoe: Cloth(idSubCategory: "3", color: "white", product_id: "", url: "", clothImage: "shoe", size: "37", createdAt: Date.now, userId: 1), bag: Cloth(idSubCategory: "4", color: "black", product_id: "", url: "", clothImage: "bag", size: "", createdAt: Date.now, userId: 1), outwear: Cloth(idSubCategory: "5", color: "blue", product_id: "", url: "", clothImage: "outwear", size: "38", createdAt: Date.now, userId: 1), accessory: Cloth(idSubCategory: "6", color: "black", product_id: "", url: "", clothImage: "accessory", size: "", createdAt: Date.now, userId: 1), userId: 1), likes: "20" , isLiked : true, description: "", season: Seasons.Fall_Winter, hashtag: ["casual","floral","denim"], userId: 3),
-        
-        OutfitPost(outfit: Outfit(top: Cloth(idSubCategory: "0", color: "black", product_id: "id", url: "url", clothImage: "", size: "M", createdAt: Date.now, userId: 1), bottom: Cloth(idSubCategory: "2", color: "tan", product_id: "", url: "", clothImage: "", size: "M", createdAt: Date.now, userId: 1), dress: Cloth(idSubCategory: "2", color: "tan", product_id: "", url: "", clothImage: "dress", size: "", createdAt: Date.now, userId: 1), shoe: Cloth(idSubCategory: "3", color: "white", product_id: "", url: "", clothImage: "shoe", size: "37", createdAt: Date.now, userId: 1), bag: Cloth(idSubCategory: "4", color: "black", product_id: "", url: "", clothImage: "bag", size: "", createdAt: Date.now, userId: 1), outwear: Cloth(idSubCategory: "5", color: "blue", product_id: "", url: "", clothImage: "outwear", size: "38", createdAt: Date.now, userId: 1), accessory: Cloth(idSubCategory: "6", color: "black", product_id: "", url: "", clothImage: "accessory", size: "", createdAt: Date.now, userId: 1), userId: 1), likes: "20",  isLiked : true, description: "", season: Seasons.Fall_Winter, hashtag: ["casual","floral","denim"], userId: 1),
-        
-        OutfitPost(outfit: Outfit(top: Cloth(idSubCategory: "0", color: "black", product_id: "id", url: "url", clothImage: "top", size: "M", createdAt: Date.now, userId: 1), bottom: Cloth(idSubCategory: "1", color: "tan", product_id: "", url: "", clothImage: "bottom", size: "M", createdAt: Date.now, userId: 1), dress: Cloth(idSubCategory: "", color: "", product_id: "", url: "", clothImage: "", size: "", createdAt: Date.now, userId: 1), shoe: Cloth(idSubCategory: "3", color: "white", product_id: "", url: "", clothImage: "shoe", size: "37", createdAt: Date.now, userId: 1), bag: Cloth(idSubCategory: "4", color: "black", product_id: "", url: "", clothImage: "bag", size: "", createdAt: Date.now, userId: 1), outwear: Cloth(idSubCategory: "5", color: "blue", product_id: "", url: "", clothImage: "outwear", size: "38", createdAt: Date.now, userId: 1), accessory: Cloth(idSubCategory: "6", color: "black", product_id: "", url: "", clothImage: "accessory", size: "", createdAt: Date.now, userId: 1), userId: 1), likes: "20",  isLiked : true, description: "", season: Seasons.Fall_Winter, hashtag: ["casual","floral","denim"], userId: 1),
-        
-        OutfitPost(outfit: Outfit(top: Cloth(idSubCategory: "0", color: "black", product_id: "id", url: "url", clothImage: "", size: "M", createdAt: Date.now, userId: 1), bottom: Cloth(idSubCategory: "2", color: "tan", product_id: "", url: "", clothImage: "", size: "M", createdAt: Date.now, userId: 1), dress: Cloth(idSubCategory: "2", color: "tan", product_id: "", url: "", clothImage: "dress", size: "", createdAt: Date.now, userId: 1), shoe: Cloth(idSubCategory: "3", color: "white", product_id: "", url: "", clothImage: "shoe", size: "37", createdAt: Date.now, userId: 1), bag: Cloth(idSubCategory: "4", color: "black", product_id: "", url: "", clothImage: "bag", size: "", createdAt: Date.now, userId: 1), outwear: Cloth(idSubCategory: "5", color: "blue", product_id: "", url: "", clothImage: "outwear", size: "38", createdAt: Date.now, userId: 1), accessory: Cloth(idSubCategory: "6", color: "black", product_id: "", url: "", clothImage: "accessory", size: "", createdAt: Date.now, userId: 1), userId: 1), likes: "20", description: "", season: Seasons.Fall_Winter, hashtag: ["casual","floral","denim"], userId: 1),
-        
-        OutfitPost(outfit: Outfit(top: Cloth(idSubCategory: "0", color: "black", product_id: "id", url: "url", clothImage: "top", size: "M", createdAt: Date.now, userId: 1), bottom: Cloth(idSubCategory: "1", color: "tan", product_id: "", url: "", clothImage: "bottom", size: "M", createdAt: Date.now, userId: 1), dress: Cloth(idSubCategory: "", color: "", product_id: "", url: "", clothImage: "", size: "", createdAt: Date.now, userId: 1), shoe: Cloth(idSubCategory: "3", color: "white", product_id: "", url: "", clothImage: "shoe", size: "37", createdAt: Date.now, userId: 1), bag: Cloth(idSubCategory: "4", color: "black", product_id: "", url: "", clothImage: "bag", size: "", createdAt: Date.now, userId: 1), outwear: Cloth(idSubCategory: "5", color: "blue", product_id: "", url: "", clothImage: "outwear", size: "38", createdAt: Date.now, userId: 1), accessory: Cloth(idSubCategory: "6", color: "black", product_id: "", url: "", clothImage: "accessory", size: "", createdAt: Date.now, userId: 1), userId: 1), likes: "20", description: "", season: Seasons.Fall_Winter, hashtag: ["casual","floral","denim"], userId: 1),
-        
-        OutfitPost(outfit: Outfit(top: Cloth(idSubCategory: "0", color: "black", product_id: "id", url: "url", clothImage: "", size: "M", createdAt: Date.now, userId: 1), bottom: Cloth(idSubCategory: "2", color: "tan", product_id: "", url: "", clothImage: "", size: "M", createdAt: Date.now, userId: 1), dress: Cloth(idSubCategory: "2", color: "tan", product_id: "", url: "", clothImage: "dress", size: "", createdAt: Date.now, userId: 1), shoe: Cloth(idSubCategory: "3", color: "white", product_id: "", url: "", clothImage: "shoe", size: "37", createdAt: Date.now, userId: 1), bag: Cloth(idSubCategory: "4", color: "black", product_id: "", url: "", clothImage: "bag", size: "", createdAt: Date.now, userId: 1), outwear: Cloth(idSubCategory: "5", color: "blue", product_id: "", url: "", clothImage: "outwear", size: "38", createdAt: Date.now, userId: 1), accessory: Cloth(idSubCategory: "6", color: "black", product_id: "", url: "", clothImage: "accessory", size: "", createdAt: Date.now, userId: 1), userId: 1), likes: "20", description: "", season: Seasons.Fall_Winter, hashtag: ["casual","floral","denim"], userId: 1),
-        
-        OutfitPost(outfit: Outfit(top: Cloth(idSubCategory: "0", color: "black", product_id: "id", url: "url", clothImage: "top", size: "M", createdAt: Date.now, userId: 1), bottom: Cloth(idSubCategory: "1", color: "tan", product_id: "", url: "", clothImage: "bottom", size: "M", createdAt: Date.now, userId: 1), dress: Cloth(idSubCategory: "", color: "", product_id: "", url: "", clothImage: "", size: "", createdAt: Date.now, userId: 1), shoe: Cloth(idSubCategory: "3", color: "white", product_id: "", url: "", clothImage: "shoe", size: "37", createdAt: Date.now, userId: 1), bag: Cloth(idSubCategory: "4", color: "black", product_id: "", url: "", clothImage: "bag", size: "", createdAt: Date.now, userId: 1), outwear: Cloth(idSubCategory: "5", color: "blue", product_id: "", url: "", clothImage: "outwear", size: "38", createdAt: Date.now, userId: 1), accessory: Cloth(idSubCategory: "6", color: "black", product_id: "", url: "", clothImage: "accessory", size: "", createdAt: Date.now, userId: 1), userId: 1), likes: "20", description: "", season: Seasons.Fall_Winter, hashtag: ["casual","floral","denim"], userId: 1),
-        
-        OutfitPost(outfit: Outfit(top: Cloth(idSubCategory: "0", color: "black", product_id: "id", url: "url", clothImage: "", size: "M", createdAt: Date.now, userId: 1), bottom: Cloth(idSubCategory: "2", color: "tan", product_id: "", url: "", clothImage: "", size: "M", createdAt: Date.now, userId: 1), dress: Cloth(idSubCategory: "2", color: "tan", product_id: "", url: "", clothImage: "dress", size: "", createdAt: Date.now, userId: 1), shoe: Cloth(idSubCategory: "3", color: "white", product_id: "", url: "", clothImage: "shoe", size: "37", createdAt: Date.now, userId: 1), bag: Cloth(idSubCategory: "4", color: "black", product_id: "", url: "", clothImage: "bag", size: "", createdAt: Date.now, userId: 1), outwear: Cloth(idSubCategory: "5", color: "blue", product_id: "", url: "", clothImage: "outwear", size: "38", createdAt: Date.now, userId: 1), accessory: Cloth(idSubCategory: "6", color: "black", product_id: "", url: "", clothImage: "accessory", size: "", createdAt: Date.now, userId: 1), userId: 1), likes: "20", description: "", season: Seasons.Fall_Winter, hashtag: ["casual","floral","denim"], userId: 1),
-        
-        OutfitPost(outfit: Outfit(top: Cloth(idSubCategory: "0", color: "black", product_id: "id", url: "url", clothImage: "top", size: "M", createdAt: Date.now, userId: 1), bottom: Cloth(idSubCategory: "1", color: "tan", product_id: "", url: "", clothImage: "bottom", size: "M", createdAt: Date.now, userId: 1), dress: Cloth(idSubCategory: "", color: "", product_id: "", url: "", clothImage: "", size: "", createdAt: Date.now, userId: 1), shoe: Cloth(idSubCategory: "3", color: "white", product_id: "", url: "", clothImage: "shoe", size: "37", createdAt: Date.now, userId: 1), bag: Cloth(idSubCategory: "4", color: "black", product_id: "", url: "", clothImage: "bag", size: "", createdAt: Date.now, userId: 1), outwear: Cloth(idSubCategory: "5", color: "blue", product_id: "", url: "", clothImage: "outwear", size: "38", createdAt: Date.now, userId: 1), accessory: Cloth(idSubCategory: "6", color: "black", product_id: "", url: "", clothImage: "accessory", size: "", createdAt: Date.now, userId: 1), userId: 1), likes: "20", description: "", season: Seasons.Fall_Winter, hashtag: ["casual","floral","denim"], userId: 1),
-        
-        OutfitPost(outfit: Outfit(top: Cloth(idSubCategory: "0", color: "black", product_id: "id", url: "url", clothImage: "", size: "M", createdAt: Date.now, userId: 1), bottom: Cloth(idSubCategory: "2", color: "tan", product_id: "", url: "", clothImage: "", size: "M", createdAt: Date.now, userId: 1), dress: Cloth(idSubCategory: "2", color: "tan", product_id: "", url: "", clothImage: "dress", size: "", createdAt: Date.now, userId: 1), shoe: Cloth(idSubCategory: "3", color: "white", product_id: "", url: "", clothImage: "shoe", size: "37", createdAt: Date.now, userId: 1), bag: Cloth(idSubCategory: "4", color: "black", product_id: "", url: "", clothImage: "bag", size: "", createdAt: Date.now, userId: 1), outwear: Cloth(idSubCategory: "5", color: "blue", product_id: "", url: "", clothImage: "outwear", size: "38", createdAt: Date.now, userId: 1), accessory: Cloth(idSubCategory: "6", color: "black", product_id: "", url: "", clothImage: "accessory", size: "", createdAt: Date.now, userId: 1), userId: 1), likes: "20", description: "", season: Seasons.Fall_Winter, hashtag: ["casual","floral","denim"], userId: 1),
-        
-        OutfitPost(outfit: Outfit(top: Cloth(idSubCategory: "0", color: "black", product_id: "id", url: "url", clothImage: "top", size: "M", createdAt: Date.now, userId: 1), bottom: Cloth(idSubCategory: "1", color: "tan", product_id: "", url: "", clothImage: "bottom", size: "M", createdAt: Date.now, userId: 1), dress: Cloth(idSubCategory: "", color: "", product_id: "", url: "", clothImage: "", size: "", createdAt: Date.now, userId: 1), shoe: Cloth(idSubCategory: "3", color: "white", product_id: "", url: "", clothImage: "shoe", size: "37", createdAt: Date.now, userId: 1), bag: Cloth(idSubCategory: "4", color: "black", product_id: "", url: "", clothImage: "bag", size: "", createdAt: Date.now, userId: 1), outwear: Cloth(idSubCategory: "5", color: "blue", product_id: "", url: "", clothImage: "outwear", size: "38", createdAt: Date.now, userId: 1), accessory: Cloth(idSubCategory: "6", color: "black", product_id: "", url: "", clothImage: "accessory", size: "", createdAt: Date.now, userId: 1), userId: 1), likes: "20", description: "", season: Seasons.Fall_Winter, hashtag: ["casual","floral","denim"], userId: 1),
-        
-        OutfitPost(outfit: Outfit(top: Cloth(idSubCategory: "0", color: "black", product_id: "id", url: "url", clothImage: "", size: "M", createdAt: Date.now, userId: 1), bottom: Cloth(idSubCategory: "2", color: "tan", product_id: "", url: "", clothImage: "", size: "M", createdAt: Date.now, userId: 1), dress: Cloth(idSubCategory: "2", color: "tan", product_id: "", url: "", clothImage: "dress", size: "", createdAt: Date.now, userId: 1), shoe: Cloth(idSubCategory: "3", color: "white", product_id: "", url: "", clothImage: "shoe", size: "37", createdAt: Date.now, userId: 1), bag: Cloth(idSubCategory: "4", color: "black", product_id: "", url: "", clothImage: "bag", size: "", createdAt: Date.now, userId: 1), outwear: Cloth(idSubCategory: "5", color: "blue", product_id: "", url: "", clothImage: "outwear", size: "38", createdAt: Date.now, userId: 1), accessory: Cloth(idSubCategory: "6", color: "black", product_id: "", url: "", clothImage: "accessory", size: "", createdAt: Date.now, userId: 1), userId: 1), likes: "20", description: "", season: Seasons.Fall_Winter, hashtag: ["casual","floral","denim"], userId: 1),
-        
-        OutfitPost(outfit: Outfit(top: Cloth(idSubCategory: "0", color: "black", product_id: "id", url: "url", clothImage: "top", size: "M", createdAt: Date.now, userId: 1), bottom: Cloth(idSubCategory: "1", color: "tan", product_id: "", url: "", clothImage: "bottom", size: "M", createdAt: Date.now, userId: 1), dress: Cloth(idSubCategory: "", color: "", product_id: "", url: "", clothImage: "", size: "", createdAt: Date.now, userId: 1), shoe: Cloth(idSubCategory: "3", color: "white", product_id: "", url: "", clothImage: "shoe", size: "37", createdAt: Date.now, userId: 1), bag: Cloth(idSubCategory: "4", color: "black", product_id: "", url: "", clothImage: "bag", size: "", createdAt: Date.now, userId: 1), outwear: Cloth(idSubCategory: "5", color: "blue", product_id: "", url: "", clothImage: "outwear", size: "38", createdAt: Date.now, userId: 1), accessory: Cloth(idSubCategory: "6", color: "black", product_id: "", url: "", clothImage: "accessory", size: "", createdAt: Date.now, userId: 1), userId: 1), likes: "20", description: "", season: Seasons.Fall_Winter, hashtag: ["casual","floral","denim"], userId: 1),
-        
-        OutfitPost(outfit: Outfit(top: Cloth(idSubCategory: "0", color: "black", product_id: "id", url: "url", clothImage: "", size: "M", createdAt: Date.now, userId: 1), bottom: Cloth(idSubCategory: "2", color: "tan", product_id: "", url: "", clothImage: "", size: "M", createdAt: Date.now, userId: 1), dress: Cloth(idSubCategory: "2", color: "tan", product_id: "", url: "", clothImage: "dress", size: "", createdAt: Date.now, userId: 1), shoe: Cloth(idSubCategory: "3", color: "white", product_id: "", url: "", clothImage: "shoe", size: "37", createdAt: Date.now, userId: 1), bag: Cloth(idSubCategory: "4", color: "black", product_id: "", url: "", clothImage: "bag", size: "", createdAt: Date.now, userId: 1), outwear: Cloth(idSubCategory: "5", color: "blue", product_id: "", url: "", clothImage: "outwear", size: "38", createdAt: Date.now, userId: 1), accessory: Cloth(idSubCategory: "6", color: "black", product_id: "", url: "", clothImage: "accessory", size: "", createdAt: Date.now, userId: 1), userId: 1), likes: "20", description: "", season: Seasons.Fall_Winter, hashtag: ["casual","floral","denim"], userId: 1),
-        
-        OutfitPost(outfit: Outfit(top: Cloth(idSubCategory: "0", color: "black", product_id: "id", url: "url", clothImage: "top", size: "M", createdAt: Date.now, userId: 1), bottom: Cloth(idSubCategory: "1", color: "tan", product_id: "", url: "", clothImage: "bottom", size: "M", createdAt: Date.now, userId: 1), dress: Cloth(idSubCategory: "", color: "", product_id: "", url: "", clothImage: "", size: "", createdAt: Date.now, userId: 1), shoe: Cloth(idSubCategory: "3", color: "white", product_id: "", url: "", clothImage: "shoe", size: "37", createdAt: Date.now, userId: 1), bag: Cloth(idSubCategory: "4", color: "black", product_id: "", url: "", clothImage: "bag", size: "", createdAt: Date.now, userId: 1), outwear: Cloth(idSubCategory: "5", color: "blue", product_id: "", url: "", clothImage: "outwear", size: "38", createdAt: Date.now, userId: 1), accessory: Cloth(idSubCategory: "6", color: "black", product_id: "", url: "", clothImage: "accessory", size: "", createdAt: Date.now, userId: 1), userId: 1), likes: "20", description: "", season: Seasons.Fall_Winter, hashtag: ["casual","floral","denim"], userId: 1),
-        
-        OutfitPost(outfit: Outfit(top: Cloth(idSubCategory: "0", color: "black", product_id: "id", url: "url", clothImage: "", size: "M", createdAt: Date.now, userId: 1), bottom: Cloth(idSubCategory: "2", color: "tan", product_id: "", url: "", clothImage: "", size: "M", createdAt: Date.now, userId: 1), dress: Cloth(idSubCategory: "2", color: "tan", product_id: "", url: "", clothImage: "dress", size: "", createdAt: Date.now, userId: 1), shoe: Cloth(idSubCategory: "3", color: "white", product_id: "", url: "", clothImage: "shoe", size: "37", createdAt: Date.now, userId: 1), bag: Cloth(idSubCategory: "4", color: "black", product_id: "", url: "", clothImage: "bag", size: "", createdAt: Date.now, userId: 1), outwear: Cloth(idSubCategory: "5", color: "blue", product_id: "", url: "", clothImage: "outwear", size: "38", createdAt: Date.now, userId: 1), accessory: Cloth(idSubCategory: "6", color: "black", product_id: "", url: "", clothImage: "accessory", size: "", createdAt: Date.now, userId: 1), userId: 1), likes: "20", description: "", season: Seasons.Fall_Winter, hashtag: ["casual","floral","denim"], userId: 1)
-        
-    
-        
+        OutfitPost(id: NSUUID().uuidString, outfit:         Outfit(id: NSUUID().uuidString, top: 0, bottom: 1, dress: 2, shoe: 3, bag: 4, outwear: 5, accessory: 6, userId: 0)
+                  , likes:11, description: "Bahar pikniği", season: Seasons.Fall_Winter , hashtag: ["Vneck","Summer"], userId: 0)
       
 
 ]
     
-    
-    
-    var categorys: [Category] = [
-    
-        Category(catName: "Top"),
-        Category(catName: "Bottom"),
-        Category(catName: "Dress"),
-        Category(catName: "Shoe"),
-        Category(catName: "Bag"),
-        Category(catName: "Outwear"),
-        Category(catName: "Accessory")
-        ]
-        
-    var subCategorys: [subCategory] = [
-    
-        subCategory(catId:Category(catName:  "Top"),subCatName: "tshirt"),
-        subCategory(catId: Category(catName: "Bottom"),subCatName: "jogger"),
-        subCategory(catId: Category(catName: "Dress"),subCatName: "dress"),
-        subCategory(catId: Category(catName: "Shoe"),subCatName: "sportshoe"),
-        subCategory(catId: Category(catName: "Bag"),subCatName: "fannybag"),
-        subCategory(catId: Category(catName: "Outwear"),subCatName: "jacket"),
-        subCategory(catId: Category(catName: "Accessory"),subCatName: "hat")
-        ]
-        
+
+
 
     var savedCloth : [Inspiration] = [
     
@@ -139,4 +76,114 @@ struct MockData {
     
     ]
             
+
+    
+    let categories: [Category] = [
+       Category( id: 0, name: "Accessory", subcategories: [
+           Subcategory( id: 0, name: "Belt"),
+           Subcategory( id: 1, name: "Beret"),
+           Subcategory( id: 2, name: "Bow"),
+           Subcategory( id: 3, name: "Brooch"),
+           Subcategory( id: 4, name: "Glasses"),
+           Subcategory( id: 5, name: "Gloves"),
+           Subcategory( id: 6, name: "Hair"),
+           Subcategory( id: 7, name: "Hat"),
+           Subcategory( id: 8, name: "Hijab"),
+           Subcategory( id: 9, name: "Jewelry"),
+           Subcategory( id: 10, name: "Scarf"),
+           Subcategory( id: 11, name: "Socks"),
+           Subcategory( id: 12, name: "Ties"),
+           Subcategory( id: 13, name: "Watch")
+        ]),
+       Category( id: 1, name: "Bag", subcategories: [
+           Subcategory( id: 14, name: "Backpack"),
+           Subcategory( id: 15, name: "Beach"),
+           Subcategory( id: 16, name: "Fanny"),
+           Subcategory( id: 17, name: "Mailman"),
+           Subcategory( id: 18, name: "Portfolio"),
+           Subcategory( id: 19, name: "Sleeve"),
+           Subcategory( id: 20, name: "Sports"),
+           Subcategory( id: 21, name: "Strap"),
+           Subcategory( id: 22, name: "Wallet")
+        ]),
+       Category( id: 2, name: "Bottom", subcategories: [
+           Subcategory( id: 23, name: "Bikini"),
+           Subcategory( id: 24, name: "Capri"),
+           Subcategory( id: 25, name: "Capris"),
+           Subcategory( id: 26, name: "Culottes"),
+           Subcategory( id: 27, name: "Cutoffs"),
+           Subcategory( id: 28, name: "Jean"),
+           Subcategory( id: 29, name: "Jeans"),
+           Subcategory( id: 30, name: "Jeggings"),
+           Subcategory( id: 31, name: "Joggers"),
+           Subcategory( id: 32, name: "Leggings"),
+           Subcategory( id: 33, name: "Mini"),
+           Subcategory( id: 34, name: "Pantolon"),
+           Subcategory( id: 35, name: "Pants"),
+           Subcategory( id: 36, name: "Salopet"),
+           Subcategory( id: 37, name: "Sarong"),
+           Subcategory( id: 38, name: "Shorts"),
+           Subcategory( id: 39, name: "Skirt"),
+           Subcategory( id: 40, name: "Skort"),
+           Subcategory( id: 41, name: "Sweatpants"),
+           Subcategory( id: 42, name: "Sweatshorts"),
+           Subcategory( id: 43, name: "SwimTrunks"),
+           Subcategory( id: 44, name: "Tights")
+        ]),
+       Category( id: 3, name: "FullBody", subcategories: [
+           Subcategory( id: 45, name: "Abaya"),
+           Subcategory( id: 46, name: "Dress"),
+           Subcategory( id: 47, name: "Jumpsuit"),
+           Subcategory( id: 48, name: "Onesie"),
+           Subcategory( id: 49, name: "Romper"),
+           Subcategory( id: 50, name: "Swimsuit")
+        ]),
+       Category( id: 4, name: "Outwear", subcategories: [
+           Subcategory( id: 51, name: "Anorak"),
+           Subcategory( id: 52, name: "Blazer"),
+           Subcategory( id: 53, name: "Caftan"),
+           Subcategory( id: 54, name: "Cardigan"),
+           Subcategory( id: 55, name: "Coat"),
+           Subcategory( id: 56, name: "Jacket"),
+           Subcategory( id: 57, name: "Kaban"),
+           Subcategory( id: 58, name: "Kimono"),
+           Subcategory( id: 59, name: "Parka"),
+           Subcategory( id: 60, name: "Peacoat"),
+           Subcategory( id: 61, name: "Poncho"),
+           Subcategory( id: 62, name: "RainCoat"),
+           Subcategory( id: 63, name: "Robe"),
+           Subcategory( id: 64, name: "TrenchCoat"),
+           Subcategory( id: 65, name: "Vest")
+        ]),
+       Category( id: 5, name: "Shoe", subcategories: [
+           Subcategory( id: 66, name: "Babet"),
+           Subcategory( id: 67, name: "Boots"),
+           Subcategory( id: 68, name: "Espadril"),
+           Subcategory( id: 69, name: "Heels"),
+           Subcategory( id: 70, name: "Loafer"),
+           Subcategory( id: 71, name: "Outdoor"),
+           Subcategory( id: 72, name: "Oxford"),
+           Subcategory( id: 73, name: "Sandals"),
+           Subcategory( id: 74, name: "Slippers"),
+           Subcategory( id: 75, name: "Sports")
+        ]),
+       Category( id: 6, name: "Top", subcategories: [
+           Subcategory( id: 76, name: "Atlet"),
+           Subcategory( id: 77, name: "Bikini"),
+           Subcategory( id: 78, name: "Blouse"),
+           Subcategory( id: 79, name: "Bustier"),
+           Subcategory( id: 80, name: "Cutoffs"),
+           Subcategory( id: 81, name: "Henley"),
+           Subcategory( id: 82, name: "Hoodie"),
+           Subcategory( id: 83, name: "Shirt"),
+           Subcategory( id: 84, name: "Sweater"),
+           Subcategory( id: 85, name: "Sweatshirt"),
+           Subcategory( id: 86, name: "Tank"),
+           Subcategory( id: 87, name: "Tee"),
+           Subcategory( id: 88, name: "Top"),
+           Subcategory( id: 89, name: "Tshirt"),
+           Subcategory( id: 90, name: "Tunic")
+        ])
+    ]
+    
 }

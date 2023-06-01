@@ -78,8 +78,8 @@ struct CreateOutfitView: View {
                 HStack (spacing: 0){
                     HStack(spacing: 0){
                         VStack {
-                            List(tableItems, id: \.self) { item in
-                                Text(item)
+                            List(0..<MockData().categories.count, id: \.self) { item in
+                                Text(MockData().categories[item].name)
                                     .font(.system(size: 8))
                                     .onTapGesture {
                                         
