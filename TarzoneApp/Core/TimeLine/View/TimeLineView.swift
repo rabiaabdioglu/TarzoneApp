@@ -8,38 +8,33 @@
 import SwiftUI
 
 struct TimeLineView: View {
-    
-    private let searchStrings: [String] = []
-    @State private var searchText : String = ""
-
+    @State private var searchText: String = ""
+    @StateObject private var viewModel: TimeLineViewModel
+    init() {
+        _viewModel = StateObject(wrappedValue: TimeLineViewModel())
+    }
     var body: some View {
-            
-            VStack{
-                ScrollView {
+        NavigationView {
+            ScrollView {
+                HStack {
                     SearchBar(text: $searchText, placeholder: "Search")
-                    let userPosts = MockData().posts.filter { $0.userId != 0}
-
-                    PostGridView(outfit: userPosts)
-                }
-            }
-            .navigationBarTitleDisplayMode(.inline)
-            .toolbar {
-                ToolbarItem(placement: .principal) {
-                    ZStack {
-                        Image("logo 1")
-                            .resizable()
-                            .frame(width: UIScreen.screenWidth * 0.25, height: nil)
-                        Text("")
-                            .frame(maxWidth: .infinity)
-                            .frame(height: 0)
+                    Spacer()
+                    Button(action: {
+                        Task {
+                            do {
+                                try await viewModel.fetchOutfit()
+                            } catch {
+                                print("Error fetching outfit post: \(error)")
+                            }
+                        }
+                    }) {
+                        Image(systemName: "arrow.clockwise")
+                            .padding(.trailing, 10)
                     }
-                }  }}
-
-    
-}
-
-struct TimeLineView_Previews: PreviewProvider {
-    static var previews: some View {
-        TimeLineView()
+                }
+                PostGridView(viewModel: viewModel , viewType: "TimeLineView")
+            }
+        }
+        .navigationTitle("Timeline")
     }
 }

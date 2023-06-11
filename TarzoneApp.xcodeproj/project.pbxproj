@@ -8,9 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		5C00A5562A281C8200452137 /* CreateOutfitViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C00A5552A281C8100452137 /* CreateOutfitViewModel.swift */; };
+		5C0558132A353CBF00A07E6A /* FollowButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0558122A353CBF00A07E6A /* FollowButton.swift */; };
+		5C0558152A353D5900A07E6A /* FollowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0558142A353D5900A07E6A /* FollowViewModel.swift */; };
 		5C09D8E82A1D80A700F29566 /* Vision.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C09D8E72A1D80A700F29566 /* Vision.framework */; };
 		5C09D8F12A1D8B7900F29566 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C09D8F02A1D8B7900F29566 /* Image.swift */; };
-		5C0F374F2A269E340055D4A0 /* label.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5C0F374E2A269E340055D4A0 /* label.txt */; };
 		5C16C5D12A1E4CF2001A2C17 /* VisionKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C16C5D02A1E4CF2001A2C17 /* VisionKit.framework */; };
 		5C16C5D52A1ECEEC001A2C17 /* ImageTipsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C16C5D42A1ECEEC001A2C17 /* ImageTipsView.swift */; };
 		5C1C8D592A1BB3FB00CAFC5C /* EditProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C1C8D582A1BB3FB00CAFC5C /* EditProfileView.swift */; };
@@ -20,8 +21,6 @@
 		5C1C8D622A1C201A00CAFC5C /* CircularProfileImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C1C8D612A1C201A00CAFC5C /* CircularProfileImageView.swift */; };
 		5C2141AE2A18146F0083E976 /* CurrentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2141AD2A18146F0083E976 /* CurrentUser.swift */; };
 		5C2141B02A18380A0083E976 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2141AF2A18380A0083E976 /* LoginViewModel.swift */; };
-		5C2141B22A184FBC0083E976 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2141B12A184FBC0083E976 /* UserService.swift */; };
-		5C2830822A1589BB00C81C36 /* Outfitss.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2830812A1589BB00C81C36 /* Outfitss.swift */; };
 		5C2F21842A1D943800F15A8A /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 5C2F21832A1D943800F15A8A /* Alamofire */; };
 		5C66CB0A2A17ED6300FBAAD9 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 5C66CB092A17ED6300FBAAD9 /* FirebaseAuth */; };
 		5C66CB0C2A17ED6300FBAAD9 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 5C66CB0B2A17ED6300FBAAD9 /* FirebaseFirestore */; };
@@ -35,13 +34,16 @@
 		5C7888BA2A0D59FC00679C66 /* TabContainerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C7888B92A0D59FC00679C66 /* TabContainerViewModel.swift */; };
 		5C7888BC2A0DC02000679C66 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C7888BB2A0DC02000679C66 /* SearchBar.swift */; };
 		5C7888BE2A0DC10900679C66 /* PostGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C7888BD2A0DC10900679C66 /* PostGridView.swift */; };
+		5C78F1E42A28E5F400C140FC /* ChoosenClothView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C78F1E32A28E5F400C140FC /* ChoosenClothView.swift */; };
 		5CA765062A16E8EF004473F4 /* LoginRegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA765052A16E8EF004473F4 /* LoginRegisterView.swift */; };
 		5CA765082A16FCA5004473F4 /* CustomInputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA765072A16FCA5004473F4 /* CustomInputField.swift */; };
+		5CB604D32A2E869300188AC4 /* TimeLineViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB604D22A2E869300188AC4 /* TimeLineViewModel.swift */; };
 		5CB959192A13917700D2E1CA /* TimeLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB959182A13917700D2E1CA /* TimeLineView.swift */; };
-		5CB959322A13D02C00D2E1CA /* Inspiration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB959312A13D02C00D2E1CA /* Inspiration.swift */; };
+		5CC033DE2A32134200A6DD03 /* ChoosenClothViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC033DD2A32134200A6DD03 /* ChoosenClothViewModel.swift */; };
 		5CC2AA082A250EB400523F11 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5CC2AA072A250EB400523F11 /* GoogleService-Info.plist */; };
 		5CC2AA102A253D8300523F11 /* SaveClothViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC2AA0F2A253D8300523F11 /* SaveClothViewModel.swift */; };
 		5CC2AA162A25754E00523F11 /* ClothPredictionModel.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 5CC2AA152A25754E00523F11 /* ClothPredictionModel.mlmodel */; };
+		5CD2F6E32A2D5E440093BC03 /* CurrentUserProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD2F6E22A2D5E440093BC03 /* CurrentUserProfileViewModel.swift */; };
 		5CDA173D29FFFFFA00BC0139 /* TarzoneApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDA173C29FFFFFA00BC0139 /* TarzoneApp.swift */; };
 		5CDA173F29FFFFFA00BC0139 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDA173E29FFFFFA00BC0139 /* ContentView.swift */; };
 		5CDA174429FFFFFC00BC0139 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5CDA174329FFFFFC00BC0139 /* Preview Assets.xcassets */; };
@@ -94,9 +96,10 @@
 
 /* Begin PBXFileReference section */
 		5C00A5552A281C8100452137 /* CreateOutfitViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateOutfitViewModel.swift; sourceTree = "<group>"; };
+		5C0558122A353CBF00A07E6A /* FollowButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowButton.swift; sourceTree = "<group>"; };
+		5C0558142A353D5900A07E6A /* FollowViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowViewModel.swift; sourceTree = "<group>"; };
 		5C09D8E72A1D80A700F29566 /* Vision.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Vision.framework; path = System/Library/Frameworks/Vision.framework; sourceTree = SDKROOT; };
 		5C09D8F02A1D8B7900F29566 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
-		5C0F374E2A269E340055D4A0 /* label.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = label.txt; sourceTree = "<group>"; };
 		5C16C5D02A1E4CF2001A2C17 /* VisionKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VisionKit.framework; path = System/Library/Frameworks/VisionKit.framework; sourceTree = SDKROOT; };
 		5C16C5D42A1ECEEC001A2C17 /* ImageTipsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTipsView.swift; sourceTree = "<group>"; };
 		5C1C8D582A1BB3FB00CAFC5C /* EditProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileView.swift; sourceTree = "<group>"; };
@@ -105,8 +108,6 @@
 		5C1C8D612A1C201A00CAFC5C /* CircularProfileImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProfileImageView.swift; sourceTree = "<group>"; };
 		5C2141AD2A18146F0083E976 /* CurrentUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentUser.swift; sourceTree = "<group>"; };
 		5C2141AF2A18380A0083E976 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
-		5C2141B12A184FBC0083E976 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
-		5C2830812A1589BB00C81C36 /* Outfitss.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Outfitss.swift; sourceTree = "<group>"; };
 		5C66CB112A17EFFC00FBAAD9 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		5C66CB162A17F25500FBAAD9 /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
 		5C66CB1B2A1807E300FBAAD9 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
@@ -115,13 +116,16 @@
 		5C7888B92A0D59FC00679C66 /* TabContainerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabContainerViewModel.swift; sourceTree = "<group>"; };
 		5C7888BB2A0DC02000679C66 /* SearchBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		5C7888BD2A0DC10900679C66 /* PostGridView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostGridView.swift; sourceTree = "<group>"; };
+		5C78F1E32A28E5F400C140FC /* ChoosenClothView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoosenClothView.swift; sourceTree = "<group>"; };
 		5CA765052A16E8EF004473F4 /* LoginRegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRegisterView.swift; sourceTree = "<group>"; };
 		5CA765072A16FCA5004473F4 /* CustomInputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomInputField.swift; sourceTree = "<group>"; };
+		5CB604D22A2E869300188AC4 /* TimeLineViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeLineViewModel.swift; sourceTree = "<group>"; };
 		5CB959182A13917700D2E1CA /* TimeLineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeLineView.swift; sourceTree = "<group>"; };
-		5CB959312A13D02C00D2E1CA /* Inspiration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Inspiration.swift; sourceTree = "<group>"; };
+		5CC033DD2A32134200A6DD03 /* ChoosenClothViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoosenClothViewModel.swift; sourceTree = "<group>"; };
 		5CC2AA072A250EB400523F11 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5CC2AA0F2A253D8300523F11 /* SaveClothViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveClothViewModel.swift; sourceTree = "<group>"; };
 		5CC2AA152A25754E00523F11 /* ClothPredictionModel.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = ClothPredictionModel.mlmodel; sourceTree = "<group>"; };
+		5CD2F6E22A2D5E440093BC03 /* CurrentUserProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentUserProfileViewModel.swift; sourceTree = "<group>"; };
 		5CDA173929FFFFFA00BC0139 /* TarzoneApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TarzoneApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CDA173C29FFFFFA00BC0139 /* TarzoneApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TarzoneApp.swift; sourceTree = "<group>"; };
 		5CDA173E29FFFFFA00BC0139 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -197,7 +201,6 @@
 			children = (
 				5C66CB112A17EFFC00FBAAD9 /* AuthService.swift */,
 				5C1C8D5C2A1BC5F400CAFC5C /* ImageUploader.swift */,
-				5C2141B12A184FBC0083E976 /* UserService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -205,8 +208,8 @@
 		5C66CB132A17F21600FBAAD9 /* Content */ = {
 			isa = PBXGroup;
 			children = (
-				5C66CB152A17F23300FBAAD9 /* ViewModel */,
 				5C66CB142A17F22F00FBAAD9 /* View */,
+				5C66CB152A17F23300FBAAD9 /* ViewModel */,
 			);
 			path = Content;
 			sourceTree = "<group>";
@@ -223,6 +226,31 @@
 			isa = PBXGroup;
 			children = (
 				5C66CB162A17F25500FBAAD9 /* ContentViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		5C78F1E02A28E5C600C140FC /* Cloth */ = {
+			isa = PBXGroup;
+			children = (
+				5C78F1E12A28E5D100C140FC /* View */,
+				5C78F1E22A28E5DB00C140FC /* ViewModel */,
+			);
+			path = Cloth;
+			sourceTree = "<group>";
+		};
+		5C78F1E12A28E5D100C140FC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5C78F1E32A28E5F400C140FC /* ChoosenClothView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5C78F1E22A28E5DB00C140FC /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				5CC033DD2A32134200A6DD03 /* ChoosenClothViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -248,6 +276,7 @@
 		5CB9591C2A13A41300D2E1CA /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				5CB604D22A2E869300188AC4 /* TimeLineViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -275,7 +304,9 @@
 		5CB9591F2A13A45C00D2E1CA /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				5C0558142A353D5900A07E6A /* FollowViewModel.swift */,
 				5C1C8D5A2A1BBBCD00CAFC5C /* EditProfileViewModel.swift */,
+				5CD2F6E22A2D5E440093BC03 /* CurrentUserProfileViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -365,7 +396,6 @@
 			isa = PBXGroup;
 			children = (
 				5CB9592A2A13A54F00D2E1CA /* View */,
-				5CB9592B2A13A55200D2E1CA /* ViewModel */,
 			);
 			path = Inspiration;
 			sourceTree = "<group>";
@@ -378,20 +408,13 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		5CB9592B2A13A55200D2E1CA /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		5CB9592C2A13A57400D2E1CA /* Outfit */ = {
+		5CB9592C2A13A57400D2E1CA /* CreateOutfit */ = {
 			isa = PBXGroup;
 			children = (
 				5CB9592D2A13A58B00D2E1CA /* View */,
 				5CB9592E2A13A58E00D2E1CA /* ViewModel */,
 			);
-			path = Outfit;
+			path = CreateOutfit;
 			sourceTree = "<group>";
 		};
 		5CB9592D2A13A58B00D2E1CA /* View */ = {
@@ -420,8 +443,9 @@
 		5CB959302A13A67100D2E1CA /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				5C78F1E02A28E5C600C140FC /* Cloth */,
 				5CB9592F2A13A64F00D2E1CA /* Search */,
-				5CB9592C2A13A57400D2E1CA /* Outfit */,
+				5CB9592C2A13A57400D2E1CA /* CreateOutfit */,
 				5CB959292A13A52F00D2E1CA /* Inspiration */,
 				5CB9591A2A13A3C400D2E1CA /* TimeLine */,
 				5CB959202A13A48300D2E1CA /* ScanCloth */,
@@ -503,8 +527,6 @@
 				5CDA17A82A00773F00BC0139 /* Category.swift */,
 				5CDA17AA2A00778D00BC0139 /* Subcategory.swift */,
 				5C7888B72A0D580B00679C66 /* TabItem.swift */,
-				5CB959312A13D02C00D2E1CA /* Inspiration.swift */,
-				5C2830812A1589BB00C81C36 /* Outfitss.swift */,
 				5C09D8F02A1D8B7900F29566 /* Image.swift */,
 			);
 			path = Model;
@@ -514,6 +536,7 @@
 			isa = PBXGroup;
 			children = (
 				5C7888BB2A0DC02000679C66 /* SearchBar.swift */,
+				5C0558122A353CBF00A07E6A /* FollowButton.swift */,
 				5CDA177F2A00019700BC0139 /* UserProfileView.swift */,
 				5C7888BD2A0DC10900679C66 /* PostGridView.swift */,
 				5CDA17822A00019700BC0139 /* OutfitView.swift */,
@@ -535,7 +558,6 @@
 		5CDA17902A00019700BC0139 /* MLModel */ = {
 			isa = PBXGroup;
 			children = (
-				5C0F374E2A269E340055D4A0 /* label.txt */,
 				5CC2AA152A25754E00523F11 /* ClothPredictionModel.mlmodel */,
 			);
 			path = MLModel;
@@ -678,7 +700,6 @@
 				5CDA174429FFFFFC00BC0139 /* Preview Assets.xcassets in Resources */,
 				5CC2AA082A250EB400523F11 /* GoogleService-Info.plist in Resources */,
 				5CDF1E302A1D709600AABFEE /* Assets.xcassets in Resources */,
-				5C0F374F2A269E340055D4A0 /* label.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -713,23 +734,24 @@
 				5C7888BC2A0DC02000679C66 /* SearchBar.swift in Sources */,
 				5CDA17A22A00019700BC0139 /* ScanClothView.swift in Sources */,
 				5CDA179E2A00019700BC0139 /* LoginView.swift in Sources */,
-				5C2830822A1589BB00C81C36 /* Outfitss.swift in Sources */,
 				5CDA174629FFFFFC00BC0139 /* Persistence.swift in Sources */,
 				5CDA17B52A009DF800BC0139 /* Extensions.swift in Sources */,
 				5C00A5562A281C8200452137 /* CreateOutfitViewModel.swift in Sources */,
 				5CB959192A13917700D2E1CA /* TimeLineView.swift in Sources */,
+				5CD2F6E32A2D5E440093BC03 /* CurrentUserProfileViewModel.swift in Sources */,
+				5CC033DE2A32134200A6DD03 /* ChoosenClothViewModel.swift in Sources */,
 				5CDA17912A00019700BC0139 /* OutfitPost.swift in Sources */,
 				5C7888BA2A0D59FC00679C66 /* TabContainerViewModel.swift in Sources */,
-				5CB959322A13D02C00D2E1CA /* Inspiration.swift in Sources */,
 				5CDA17A52A0073F400BC0139 /* UserProfile.swift in Sources */,
 				5CDA173F29FFFFFA00BC0139 /* ContentView.swift in Sources */,
 				5C1C8D622A1C201A00CAFC5C /* CircularProfileImageView.swift in Sources */,
-				5C2141B22A184FBC0083E976 /* UserService.swift in Sources */,
 				5CDA179A2A00019700BC0139 /* SavedOutfitsView.swift in Sources */,
 				5CDA17982A00019700BC0139 /* OutfitView.swift in Sources */,
+				5CB604D32A2E869300188AC4 /* TimeLineViewModel.swift in Sources */,
 				5CDA17992A00019700BC0139 /* TabContainerView.swift in Sources */,
 				5CDA17A92A00773F00BC0139 /* Category.swift in Sources */,
 				5C7888BE2A0DC10900679C66 /* PostGridView.swift in Sources */,
+				5C0558152A353D5900A07E6A /* FollowViewModel.swift in Sources */,
 				5C1C8D5D2A1BC5F400CAFC5C /* ImageUploader.swift in Sources */,
 				5C7888B62A0D421B00679C66 /* FollowView.swift in Sources */,
 				5CDF1E2A2A1D5D5700AABFEE /* ImagePickerViewModel.swift in Sources */,
@@ -740,12 +762,14 @@
 				5CA765082A16FCA5004473F4 /* CustomInputField.swift in Sources */,
 				5C2141B02A18380A0083E976 /* LoginViewModel.swift in Sources */,
 				5C66CB1C2A1807E300FBAAD9 /* RegisterViewModel.swift in Sources */,
+				5C0558132A353CBF00A07E6A /* FollowButton.swift in Sources */,
 				5C1C8D5B2A1BBBCD00CAFC5C /* EditProfileViewModel.swift in Sources */,
 				5CA765062A16E8EF004473F4 /* LoginRegisterView.swift in Sources */,
 				5CDA173D29FFFFFA00BC0139 /* TarzoneApp.swift in Sources */,
 				5CDA174929FFFFFC00BC0139 /* TarzoneApp.xcdatamodeld in Sources */,
 				5CDA17A12A00019700BC0139 /* ProfileView.swift in Sources */,
 				5CDA17AF2A00780D00BC0139 /* Outfit.swift in Sources */,
+				5C78F1E42A28E5F400C140FC /* ChoosenClothView.swift in Sources */,
 				5C1C8D592A1BB3FB00CAFC5C /* EditProfileView.swift in Sources */,
 				5C66CB172A17F25500FBAAD9 /* ContentViewModel.swift in Sources */,
 				5CDA17B32A007CF700BC0139 /* MockData.swift in Sources */,
@@ -916,6 +940,9 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TarzoneApp/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "The application needs camera access to be used more efficiently.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "The application needs access to the photo library in order to be used more efficiently.";
+				INFOPLIST_KEY_NSPrincipalClass = TarzoneApp.AppDelegate;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -946,6 +973,9 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TarzoneApp/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "The application needs camera access to be used more efficiently.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "The application needs access to the photo library in order to be used more efficiently.";
+				INFOPLIST_KEY_NSPrincipalClass = TarzoneApp.AppDelegate;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";

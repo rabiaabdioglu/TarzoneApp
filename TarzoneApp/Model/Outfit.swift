@@ -8,17 +8,17 @@
 
 import Foundation
 
-struct Outfit: Identifiable {
+struct Outfit: Identifiable , Encodable, Decodable , Hashable{
+    //CLOTHS İD
+    var id : String
+    var top : String
+    var bottom : String
+    var fullbody : String
+    var shoe : String
+    var bag : String
+    var outwear : String
+    var accessory : String
+    var userId : String
     
-    let id : String
-    var top : Int
-    var bottom : Int
-    var dress : Int
-    var shoe : Int
-    var bag : Int
-    var outwear : Int
-    var accessory : Int
-    var userId : Int
-
 
 }

@@ -11,7 +11,6 @@ import Kingfisher
 struct CircularProfileImageView: View {
     let user : User
     var body: some View {
-        
         if let imageUrl = user.userImage{
             KFImage(URL(string: imageUrl))
                 .resizable()
@@ -19,11 +18,8 @@ struct CircularProfileImageView: View {
                 .frame(width: UIScreen.screenWidth * 0.13, height: UIScreen.screenWidth * 0.13, alignment: .center)
                 .clipped()
                 .padding(.leading, 5)
-            
-            
         }
         else {
-            
             Image(systemName: "person.circle.fill")
                 .resizable()
                 .cornerRadius(100)
@@ -32,12 +28,6 @@ struct CircularProfileImageView: View {
                 .padding(.leading, 5)
                 .foregroundColor(Color(.systemGray4))
         }
-        
     }
 }
 
-struct CircularProfileImageView_Previews: PreviewProvider {
-    static var previews: some View {
-        CircularProfileImageView(user: MockData().users[0])
-    }
-}

@@ -8,76 +8,7 @@
 import Foundation
 import Firebase
 struct MockData {
-    
-
-    
-    
-    var users: [User] = [
-        User(id: NSUUID().uuidString, email: "r@gmail.com", userName: "@rabiabdglu", name: "Rabia Abdioğlu", userImage: nil, privacy: false, hasFollowed: true,  followers: 10, following: 22, description: " "),
-    
-    
-        User(id: NSUUID().uuidString, email:   "r@gmail.com",userName: "@enesraf", name: "Enes Tuğberk Kılıç", userImage: nil, privacy: false, hasFollowed: true,  followers: 10, following: 22, description: " "),
-        
-    
-        User(id: NSUUID().uuidString, email:   "r@gmail.com",userName: "@semihanim", name: "Semiha Arslan Abdioğlu", userImage: nil, privacy: true, hasFollowed: true,  followers: 10, following: 22, description: " "),
-        
-    
-        User(id: NSUUID().uuidString, email:   "r@gmail.com",userName: "@emredersin", name: "Yusuf Emre Abdioğlu", userImage: "user_4", privacy: false, hasFollowed: false, followers: 10, following: 22, description: " "),
-        
-    
-        User(id: NSUUID().uuidString, email:   "r@gmail.com",userName: "@emirhanim", name: "Emirhan Çağlar", userImage: "user_5", privacy: false, hasFollowed: true,followers: 10, following: 22, description: " "),
-        
-    
-    
-        User(id: NSUUID().uuidString, email:   "r@gmail.com",userName: "@enesraf", name: "Enes Tuğberk Kılıç", userImage: "user_2", privacy: false, hasFollowed: true,  followers: 10, following: 22, description: " "),
- 
-    ]
-    
-    
-    var cloths: [Cloth] = [
-        Cloth(id: NSUUID().uuidString ,userId: "1",idCategory: 0, idSubCategory: 0, color: "black",  url: "url", clothImage: "top", size: "M", createdAt: Timestamp(), hashtags: [""]),
-       Cloth(id: NSUUID().uuidString ,userId: "2",idCategory: 0, idSubCategory: 1, color: "tan",  url: "", clothImage: "bottom", size: "M", createdAt: Timestamp(), hashtags: [""]),
-       Cloth(id: NSUUID().uuidString ,userId: "3",idCategory: 0, idSubCategory: 2, color: "white", url: "", clothImage: "dress", size: "s", createdAt: Timestamp(), hashtags: [""]),
-       Cloth(id: NSUUID().uuidString ,userId: "4",idCategory: 0, idSubCategory: 3, color: "white",  url: "", clothImage: "shoe", size: "37", createdAt: Timestamp(), hashtags: [""]),
-       Cloth(id: NSUUID().uuidString ,userId: "5",idCategory: 0, idSubCategory: 4, color: "black", url: "", clothImage: "bag", size: "", createdAt: Timestamp(), hashtags: [""]),
-       Cloth(id: NSUUID().uuidString ,userId: "0",idCategory: 0, idSubCategory: 5, color: "blue",  url: "", clothImage: "outwear", size: "38", createdAt: Timestamp(), hashtags: [""]),
-       Cloth(id: NSUUID().uuidString ,userId: "1",idCategory: 0, idSubCategory: 6, color: "black", url: "", clothImage: "accessory", size: "", createdAt: Timestamp(), hashtags: [""])
-        
-        
- ]
-    
-    var outfits: [Outfit]=[
-     
-        Outfit(id: NSUUID().uuidString, top: 0, bottom: 1, dress: 2, shoe: 3, bag: 4, outwear: 5, accessory: 6, userId: 0)
- ]
-    
-    
-    
-    var posts: [OutfitPost] = [
-        
-        OutfitPost(id: NSUUID().uuidString, outfit:         Outfit(id: NSUUID().uuidString, top: 0, bottom: 1, dress: 2, shoe: 3, bag: 4, outwear: 5, accessory: 6, userId: 0)
-                  , likes:11, description: "Bahar pikniği", season: Seasons.Fall_Winter , hashtag: ["Vneck","Summer"], userId: 0)
-      
-
-]
-    
-
-
-
-    var savedCloth : [Inspiration] = [
-    
-        Inspiration(userId: 0, savedOutfitId: [0,1,2]),
-        Inspiration(userId: 1, savedOutfitId: [3,4,5]),
-        Inspiration(userId: 2, savedOutfitId: [0,1,3]),
-        Inspiration(userId: 3, savedOutfitId: [0,2,4]),
-        Inspiration(userId: 4, savedOutfitId: [0,1,2]),
-        Inspiration(userId: 5, savedOutfitId: [0,1,2])
-
-    
-    ]
-            
-
-    
+   
     let categories: [Category] = [
        Category( id: 0, name: "Accessory", subcategories: [
            Subcategory( id: 0, name: "Belt"),

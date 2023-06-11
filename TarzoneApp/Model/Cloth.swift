@@ -7,7 +7,7 @@
 import Foundation
 import SwiftUI
  import Firebase
-struct Cloth: Identifiable , Encodable , Hashable{
+struct Cloth: Identifiable , Encodable , Hashable , Decodable{
     
     var id : String
     var userId : String

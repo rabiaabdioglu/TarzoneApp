@@ -8,24 +8,26 @@
 import Foundation
 
 
-struct OutfitPost: Identifiable {
+struct OutfitPost: Identifiable{
     
-    let id : String
-    let outfit : Outfit
+    var id : String
+    var outfit : Outfit
     var likes : Int
     var isLiked : Bool = false
     var description : String
-    var season : Seasons
-    var hashtag :  [String]
-    var userId : Int
+    var season : Seasons?
+    var userId : String
+    var savedBy : [String]
     
 }
-enum Seasons {
-    case Spring_Summer
-    case Fall_Winter
-    case Resort
-    case Pre_Fall
+enum Seasons: String {
+    case Spring_Summer = "Spring/Summer"
+    case Fall_Winter = "Fall/Winter"
+    case Resort = "Resort"
+    case Pre_Fall = "Pre-Fall"
+    case Other = "Other"
 }
+ 
 
 func seasonToString(_ season: Seasons) -> String {
     switch season {
@@ -37,7 +39,10 @@ func seasonToString(_ season: Seasons) -> String {
         return "Resort"
     case .Pre_Fall:
         return "Pre-Fall"
-    }
+        
+    case .Other:
+        return "Other"
+    }}
     
     
-}
+

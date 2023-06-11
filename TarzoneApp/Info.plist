@@ -2,10 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>NSCameraUsageDescription</key>
-	<string>The application needs camera access to be used more efficiently.</string>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>The application needs access to the photo library in order to be used more efficiently.</string>
+	<key>UIApplicationDelegateClassName</key>
+	<string>TarzoneApp.AppDelegate</string>
 	<key>UILaunchScreen</key>
 	<dict>
 		<key>UIImageName</key>

@@ -6,93 +6,104 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct OutfitView: View {
-    
-    var outfit : Outfit
-    
+    var isClickable = false
+    @State private var isPresentingChoosenClothView = false
+    @State private var selectedCloth: Cloth? = nil
+    var outfit: Outfit
     let width = UIScreen.screenWidth * 0.2
-    
-    
-    var body: some View {
-        
-        
-        VStack(alignment: .center, spacing: 20) {
-            
-            HStack {
-                Spacer()
-                
-                VStack {
-                    
-                    Image(MockData().cloths[outfit.outwear].clothImage)
-                        .resizable()
-                        .frame(width: UIScreen.screenWidth * 0.2, height:UIScreen.screenHeight * 0.30)
-                        .scaleEffect(0.8) // İçeriği küçültmek için scaleEffect kullanın
-                    
-                }
-                
-                if MockData().cloths[outfit.dress].clothImage == ""
-                {
-                    VStack {
-                        
-                        Image(MockData().cloths[outfit.top].clothImage)
-                            .resizable()
-                            .frame(width: UIScreen.screenWidth * 0.2, height:UIScreen.screenHeight * 0.15)
-                            .scaleEffect(0.9) // İçeriği küçültmek için scaleEffect kullanın
-                        
-                        Image(MockData().cloths[outfit.bottom].clothImage)
-                            .resizable()
-                            .frame(width: UIScreen.screenWidth * 0.2, height:UIScreen.screenHeight * 0.15)
-                            .scaleEffect(0.9) // İçeriği küçültmek için scaleEffect kullanın
-                        
-                    }
-                    
-                }
-                else {
-                    VStack {
-                        
-                        Image(MockData().cloths[outfit.dress].clothImage)
-                            .resizable()
-                            .frame(width: UIScreen.screenWidth * 0.2, height:UIScreen.screenHeight * 0.30)
-                            .scaleEffect(0.8) // İçeriği küçültmek için scaleEffect kullanın
-                        
-                    }
-                    
-                }
-                
-                VStack {
-                    
-                    Image(MockData().cloths[outfit.accessory].clothImage)
-                        .resizable()
-                        .frame(width: UIScreen.screenWidth * 0.2, height:UIScreen.screenHeight * 0.10)
-                        .scaleEffect(0.8) // İçeriği küçültmek için scaleEffect kullanın
-                    
-                    
-                    Image(MockData().cloths[outfit.bag].clothImage)
-                        .resizable()
-                        .frame(width: UIScreen.screenWidth * 0.2, height:UIScreen.screenHeight * 0.10)
-                        .scaleEffect(0.8) // İçeriği küçültmek için scaleEffect kullanın
-                    
-                    Image(MockData().cloths[outfit.shoe].clothImage)
-                        .resizable()
-                        .frame(width: UIScreen.screenWidth * 0.2, height:UIScreen.screenHeight * 0.10)
-                        .scaleEffect(0.8) // İçeriği küçültmek için scaleEffect kullanın
-                    
-                }
-                Spacer()
-                
-                
-            }
-            
-        }
-        .padding(10)
-        .frame(width: nil , height:UIScreen.screenHeight * 0.30)
-        
+    @StateObject var viewModel: TimeLineViewModel
+    init(outfit: Outfit, isClickable: Bool) {
+        self.outfit = outfit
+        self.isClickable = isClickable
+        self._viewModel = StateObject(wrappedValue: TimeLineViewModel())
     }
-}
-
-struct OutfitView_Previews: PreviewProvider {
-    static var previews: some View {
-        OutfitView(outfit: MockData().outfits[0] )
+    var body: some View {
+        VStack(alignment: .center, spacing: 20) {
+            if !viewModel.cloths.isEmpty {
+                HStack {
+                    Spacer()
+                    VStack {
+                        if let cloth = viewModel.cloths.first(where: { $0.idCategory == 4 }) {
+                            clothImage(scale: 0.3, cloth: cloth)
+                        }
+                    }
+                    if outfit.fullbody == "" {
+                        VStack {
+                            if let cloth = viewModel.cloths.first(where: { $0.idCategory == 6 }) {
+                                clothImage(scale: 0.15, cloth: cloth)
+                            }
+                            if let cloth = viewModel.cloths.first(where: { $0.idCategory == 2 }) {
+                                clothImage(scale: 0.15, cloth: cloth)
+                            }
+                        }
+                    } else {
+                        VStack {
+                            if let cloth = viewModel.cloths.first(where: { $0.idCategory == 3 }) {
+                                clothImage(scale: 0.3, cloth: cloth)
+                            }
+                        }
+                    }
+                    VStack {
+                        if let cloth = viewModel.cloths.first(where: { $0.idCategory == 0 }) {
+                            clothImage(scale: 0.1, cloth: cloth)
+                        }
+                        if let cloth = viewModel.cloths.first(where: { $0.idCategory == 1 }) {
+                            clothImage(scale: 0.1, cloth: cloth)
+                        }
+                        if let cloth = viewModel.cloths.first(where: { $0.idCategory == 5 }) {
+                            clothImage(scale: 0.1, cloth: cloth)
+                        }
+                    }
+                    Spacer()
+                }
+                .padding(10)
+                .frame(width: nil, height: UIScreen.screenHeight * 0.30)
+            } else {
+                Spacer()
+                ProgressView()
+                Spacer()
+            }
+        }
+        .onAppear() {
+            Task {
+                await viewModel.fetchOutfitCloths(outfitData: outfit)
+            }
+        }
+        .fullScreenCover(item: $selectedCloth) { cloth in
+            ChoosenClothView(cloth: cloth)
+                .onDisappear(){
+                    selectedCloth = nil
+                }
+        }
+    }
+    @ViewBuilder
+    func clothImage(scale: Double, cloth: Cloth) -> some View {
+        Button(action: {
+            selectedCloth = cloth
+            isPresentingChoosenClothView = true
+        }) {
+            KFImage(URL(string: cloth.clothImage))
+                .resizable()
+                .frame(width: width, height: UIScreen.screenHeight * CGFloat(scale))
+                .scaleEffect(0.8)
+                .contentShape(Rectangle())
+        }
+        .transition(.identity)
+        .onTapGesture {
+            if isClickable {
+                // Tıklanabilir durumda işlemleri burada gerçekleştirin
+                selectedCloth = cloth
+                isPresentingChoosenClothView = true
+            }
+        }
+        .disabled(!isClickable) // Tıklanabilirlik durumuna bağlı olarak butonun etkinliğini ayarladım
+        .foregroundColor(isClickable ? .primary : .secondary) // Pasif durumda içeriğin rengini ayarladım
+        .overlay(
+            RoundedRectangle(cornerRadius: 5)
+                .stroke(Color.clear, lineWidth: isClickable ? 0.05 : 0) // Pasif durumda kenarlık kalınlığını ayarladım
+        )
     }
 }

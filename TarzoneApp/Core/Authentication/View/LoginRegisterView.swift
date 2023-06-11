@@ -11,18 +11,14 @@ import SwiftUI
 struct LoginRegisterView: View {
     @State private var isLoginSelected = false
     @State private var isRegisterSelected = false
-    
     var body: some View {
         VStack(spacing: 110) {
             Spacer()
             Spacer()
-
             Image("logo 1")
                 .scaleEffect(1.2)
-
             VStack(spacing: 0){
                 Spacer()
-
                 Button(action: {
                     isLoginSelected = true
                 }) {
@@ -41,7 +37,6 @@ struct LoginRegisterView: View {
                     // Login görünümünü burada açın
                     LoginView()
                 }
-                
                 Button(action: {
                     isRegisterSelected = true
                 }) {
@@ -62,7 +57,6 @@ struct LoginRegisterView: View {
                         RegisterView()}
                 }
             }
-
             Image("people")
                 .scaleEffect(0.6)
                 .padding(.bottom, 0)
