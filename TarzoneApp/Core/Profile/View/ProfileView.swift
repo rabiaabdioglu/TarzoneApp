@@ -3,109 +3,104 @@ import SwiftUI
 struct ProfileView: View {
     var user: User
     @Environment(\.presentationMode) var presentationMode
-    
     @State private var isFollowersActive = false
     @State private var isFollowingActive = false
-    
+    @StateObject private var viewModel =  TimeLineViewModel()
+    @StateObject private var followViewModel =  FollowViewModel()
     var body: some View {
-
         NavigationStack {
             Spacer()
-
             VStack(spacing: 1) {
                 ScrollView {
                     VStack(spacing: 20) {
                         HStack(spacing: UIScreen.screenWidth * 0.10) {
                             UserProfileView(user: user)
                                 .disabled(true)
-                            
-                            
-                            Button(action: {
-                                // Takip et butonuna tıklandığında gerçekleşecek işlemler
-                            }) {
-                                Text(user.hasFollowed! ? "Unfollow" : "Follow")
-                                    .padding(.horizontal, 10)
-                                    .padding(.vertical, 5)
-                                    .foregroundColor(.white)
-                                    .background(user.hasFollowed! ? Color(red: 0.718, green: 0.467, blue: 0.369)  : Color.green)
-                                    .cornerRadius(5)
-                            }
-                            
+                            FollowButton(user: user, followCheck: $followViewModel.followCheck, followingCount: $followViewModel.following, followersCount: $followViewModel.followers)
                         }
                         .padding()
-                        
                         HStack{
                             Text(user.description ?? " ")
                         }
                         HStack(spacing: UIScreen.screenHeight * 0.03) {
-                            Text("\(user.followers!)\nOutfit")
+                            Text("\(followViewModel.formatNumber(viewModel.profileOutfit.count))\nOutfit")
                                 .multilineTextAlignment(.center)
-                            
-                            Text("\(user.following!)\nFollowing")
+                            Text("\(followViewModel.formatNumber(followViewModel.following))\nFollowing")
                                 .multilineTextAlignment(.center)
                                 .onTapGesture {
                                     isFollowingActive = true
                                 }
-                            
-                            Text("\(user.followers!)\nFollowers")
+                            Text("\(followViewModel.formatNumber(followViewModel.followers))\nFollowers")
                                 .multilineTextAlignment(.center)
                                 .onTapGesture {
                                     isFollowersActive = true
                                 }
                         }
-                        
                         Divider()
-
                     }
-                
-                    
-                    if user.privacy! {
+                    if user.privacy == true {
                         VStack {
                             Image("privacy")
                                 .frame(width: 100, height: 100)
-                            Text("Kullanıcının kombinleri gizli")
+                            Text("This profile is private")
+                                .font(Font.custom("HelveticaNeue", size: UIScreen.screenWidth * 0.03))
+                                .padding(0.1)
+                                .fontWeight(.thin)
                         }
                     } else {
-                        let userPosts = MockData().posts.filter { $0.userId == 1}
-
-                        PostGridView(outfit: userPosts)
+                        ScrollView {
+                            HStack {
+                                Spacer()
+                                Text("Outfits")
+                                    .font(Font.custom("HelveticaNeue", size: UIScreen.screenWidth * 0.03))
+                                    .padding(0.1)
+                                    .foregroundColor(.black)
+                                Spacer()
+                                Button(action: {
+                                    Task {
+                                        do {
+                                            try await viewModel.fetchProfileOutfit()
+                                        } catch {
+                                            print("Error fetching outfit post: \(error)")
+                                        }
+                                    }
+                                }) {
+                                    Image(systemName: "arrow.clockwise")
+                                        .padding(.trailing, 20)
+                                }
+                            }
+                            PostGridView(viewModel: viewModel, viewType: "ProfileView")
+                        }
                     }
                 }
             }
             .font(Font.custom("HelveticaNeue-Light", size: 10))
             .navigationBarItems(leading: backButton)
             .sheet(isPresented: $isFollowersActive, content: {
-                FollowerListView(user: user)
+                FollowerListView(user: user, pageName: "Follower")
             })
             .sheet(isPresented: $isFollowingActive, content: {
-                FollowerListView(user: user)
+                FollowerListView(user: user, pageName: "Following")
             })
             .navigationTitle("Profile")
             .navigationBarTitleDisplayMode(.inline)
-         
-      
+            .onAppear(){
+                viewModel.userIdForProfileViews = user.id
+                followViewModel.follows(userId: user.id)
+                followViewModel.followers(userId: user.id)
+                followViewModel.followState(userId: user.id)
+            }
         }
-        
-        
     }
-    
     var backButton: some View {
-        
-            return AnyView(
-                Button(action: {
-                    presentationMode.wrappedValue.dismiss()
-                }) {
-                    Image(systemName: "chevron.left")
-                        .imageScale(.large)
-                        .foregroundColor(Color(red: 153/255, green: 153/255, blue: 153/255))
-                }
-            )
-        
-    }
-}
-
-struct ProfileView_Previews: PreviewProvider {
-    static var previews: some View {
-        ProfileView(user: MockData().users[1])
+        return AnyView(
+            Button(action: {
+                presentationMode.wrappedValue.dismiss()
+            }) {
+                Image(systemName: "chevron.left")
+                    .imageScale(.large)
+                    .foregroundColor(Color(red: 153/255, green: 153/255, blue: 153/255))
+            }
+        )
     }
 }

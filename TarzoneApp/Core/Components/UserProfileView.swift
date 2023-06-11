@@ -10,34 +10,26 @@ import SwiftUI
 struct UserProfileView: View {
     var user: User
     @Environment(\.presentationMode) var presentationMode
-
     @State private var isProfileActive = false
-    
-    
     var body: some View {
-        
         Button(action: {
             if user.id == "0" {
-            //tabbar geçişi için
-                
+                //tabbar geçişi için
             } else {
                 isProfileActive = true
             }
         }) {
             HStack {
-              CircularProfileImageView(user: user)
-                
+                CircularProfileImageView(user: user)
                 VStack(alignment: .leading) {
                     Text(user.name ?? "User Name")
                         .font(Font.custom("HelveticaNeue", size: UIScreen.screenWidth * 0.03))
                         .padding(0.1)
                         .foregroundColor(.black)
-
                     Text("@" + user.userName )
                         .font(Font.custom("HelveticaNeue-Light", size: UIScreen.screenWidth * 0.025))
                         .padding(0.1)
                         .foregroundColor(.black)
-
                 }
             }
         }
@@ -49,21 +41,6 @@ struct UserProfileView: View {
             else{
                 ProfileView(user: user)
                 .edgesIgnoringSafeArea(.all)}
-   
-            
-            
         })
-        
-        
-    }
-    
-
-    struct UserProfileView_Previews: PreviewProvider {
-        static var previews: some View {
-            UserProfileView(user: MockData().users[0])
-        }
     }
 }
-
-
-

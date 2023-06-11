@@ -7,55 +7,35 @@
 
 import Foundation
 import SwiftUI
-
+import Firebase
 
 struct FollowView: View {
     var user: User
-    
-    
+    @StateObject private var followViewModel =  FollowViewModel()
+    var isCurrentUser: Bool {
+        user.id == Auth.auth().currentUser?.uid
+    }
     var body: some View {
         VStack(alignment: .leading) {
-            
-                HStack {
-                    
-                    UserProfileView(user: user)
+            HStack {
+                UserProfileView(user: user)
+                    .disabled(isCurrentUser)
+                Spacer()
+                if !isCurrentUser {
                     Spacer()
-
-                    Button(action: {
-                        // Eylem
-                    }) {
-                        HStack {
-                            Spacer()
-                            Text(user.hasFollowed!  ? " Follow " : " Unfollow ")
-                                .font(Font.system(size: UIScreen.screenWidth * 0.020, weight: .semibold))
-                                .foregroundColor(user.hasFollowed! ? Color.blue : Color.white)
-                                .clipped()
-                            Spacer()
-                        }
-                    }
-                    .padding()
-                    .background(user.hasFollowed! ? Color.white : Color.blue)
-                    .frame(width: UIScreen.screenWidth * 0.30 , height: UIScreen.screenHeight * 0.04, alignment: .center)
-                    .clipped()
-                    .cornerRadius(6)
-                    .border(user.hasFollowed! ? Color.blue : Color.white, width: 0.5)
-                    
+                    FollowButton(user: user, followCheck: $followViewModel.followCheck, followingCount: $followViewModel.following, followersCount: $followViewModel.followers)
+                        .frame(width: UIScreen.screenWidth * 0.30 , height: UIScreen.screenHeight * 0.04, alignment: .leading)
+                        .cornerRadius(6)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 6)
+                                .stroke(Color.blue, lineWidth: 0.5)
+                        )
+                        .padding(.trailing , 2)
+                    Spacer()
                 }
-            
-            
-                .padding(.all, UIScreen.screenHeight * 0.003)
             }
-        .padding(.all, UIScreen.screenWidth * 0.003)
+            .padding(.all, UIScreen.screenHeight * 0.003)
         }
-       
-
-        
-        
-    
-}
-
-struct FollowView_Previews: PreviewProvider {
-    static var previews: some View {
-        FollowView(user: MockData().users[2])
+        .padding(.all, UIScreen.screenWidth * 0.003)
     }
 }
